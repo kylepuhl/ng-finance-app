@@ -2,8 +2,10 @@
     background: darkgrey;
     padding: 20px 10px;
     margin: 10px;
+    margin-bottom: 50px;
     color: white;
     display: flex;
+
 }
 
 .left-column {
