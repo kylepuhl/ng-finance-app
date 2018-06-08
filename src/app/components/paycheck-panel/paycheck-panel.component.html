@@ -1,13 +1,16 @@
-<div class="container paycheck-panel row">
-    <div class="column left-column">
-        <h6 class="h6">
-            Kyle's next paycheck: {{kyleDate}} (in {{kylesDaysUntilNextPaycheck}} days)</h6>
+<mat-grid-list cols="6" rowHeight="40px">
 
+    <mat-grid-tile colspan="3" class="paycheck-card">
+        <h5 class="h6">
+            Kyle's next paycheck: {{kyleDate}} (in {{kylesDaysUntilNextPaycheck}} days)
+        </h5>
 
-    </div>
-    <div class="column right-column">
-        <h6 class="h6">
+    </mat-grid-tile>
+
+    <mat-grid-tile colspan="3" class="paycheck-card">
+        <h5 class="h6">
             Sarah's next paycheck: {{sarahDate}} (in {{sarahsDaysUntilNextPaycheck}} days)
-        </h6>
-    </div>
-</div>
+        </h5>
+    </mat-grid-tile>
+
+</mat-grid-list>

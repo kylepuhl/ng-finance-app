@@ -1,10 +1,10 @@
 /**
- * @license Angular v6.0.3
+ * @license Angular v6.0.4
  * (c) 2010-2018 Google, Inc. https://angular.io/
  * License: MIT
  */
 
-import { CommonModule, DOCUMENT, PlatformLocation, ɵPLATFORM_BROWSER_ID, ɵparseCookieValue } from '@angular/common';
+import { CommonModule, DOCUMENT, PlatformLocation, isPlatformServer, ɵPLATFORM_BROWSER_ID, ɵparseCookieValue } from '@angular/common';
 import { APP_ID, APP_INITIALIZER, ApplicationInitStatus, ApplicationModule, ApplicationRef, ErrorHandler, Inject, Injectable, InjectionToken, Injector, NgModule, NgProbeToken, NgZone, Optional, PLATFORM_ID, PLATFORM_INITIALIZER, RendererFactory2, RendererStyleFlags2, Sanitizer, SecurityContext, SkipSelf, Testability, Version, ViewEncapsulation, createPlatformFactory, getDebugNode, platformCore, setTestabilityGetter, ɵAPP_ROOT, ɵConsole, ɵ_sanitizeHtml, ɵ_sanitizeStyle, ɵ_sanitizeUrl, ɵglobal } from '@angular/core';
 
 /**
@@ -1204,7 +1204,7 @@ BrowserPlatformLocation.decorators = [
 ];
 /** @nocollapse */
 BrowserPlatformLocation.ctorParameters = () => [
-    { type: undefined, decorators: [{ type: Inject, args: [DOCUMENT$1,] },] },
+    { type: undefined, decorators: [{ type: Inject, args: [DOCUMENT$1,] }] }
 ];
 
 /**
@@ -1356,7 +1356,7 @@ Meta.decorators = [
 ];
 /** @nocollapse */
 Meta.ctorParameters = () => [
-    { type: undefined, decorators: [{ type: Inject, args: [DOCUMENT$1,] },] },
+    { type: undefined, decorators: [{ type: Inject, args: [DOCUMENT$1,] }] }
 ];
 
 /**
@@ -1521,7 +1521,7 @@ Title.decorators = [
 ];
 /** @nocollapse */
 Title.ctorParameters = () => [
-    { type: undefined, decorators: [{ type: Inject, args: [DOCUMENT$1,] },] },
+    { type: undefined, decorators: [{ type: Inject, args: [DOCUMENT$1,] }] }
 ];
 
 /**
@@ -1709,8 +1709,8 @@ EventManager.decorators = [
 ];
 /** @nocollapse */
 EventManager.ctorParameters = () => [
-    { type: Array, decorators: [{ type: Inject, args: [EVENT_MANAGER_PLUGINS,] },] },
-    { type: NgZone, },
+    { type: Array, decorators: [{ type: Inject, args: [EVENT_MANAGER_PLUGINS,] }] },
+    { type: NgZone }
 ];
 /**
  * @abstract
@@ -1782,8 +1782,6 @@ class SharedStylesHost {
 SharedStylesHost.decorators = [
     { type: Injectable }
 ];
-/** @nocollapse */
-SharedStylesHost.ctorParameters = () => [];
 class DomSharedStylesHost extends SharedStylesHost {
     /**
      * @param {?} _doc
@@ -1837,7 +1835,7 @@ DomSharedStylesHost.decorators = [
 ];
 /** @nocollapse */
 DomSharedStylesHost.ctorParameters = () => [
-    { type: undefined, decorators: [{ type: Inject, args: [DOCUMENT$1,] },] },
+    { type: undefined, decorators: [{ type: Inject, args: [DOCUMENT$1,] }] }
 ];
 
 /**
@@ -1966,8 +1964,8 @@ DomRendererFactory2.decorators = [
 ];
 /** @nocollapse */
 DomRendererFactory2.ctorParameters = () => [
-    { type: EventManager, },
-    { type: DomSharedStylesHost, },
+    { type: EventManager },
+    { type: DomSharedStylesHost }
 ];
 class DefaultDomRenderer2 {
     /**
@@ -2363,17 +2361,20 @@ class DomEventsPlugin extends EventManagerPlugin {
     /**
      * @param {?} doc
      * @param {?} ngZone
+     * @param {?} platformId
      */
-    constructor(doc, ngZone) {
+    constructor(doc, ngZone, platformId) {
         super(doc);
         this.ngZone = ngZone;
-        this.patchEvent();
+        if (!platformId || !isPlatformServer(platformId)) {
+            this.patchEvent();
+        }
     }
     /**
      * @return {?}
      */
     patchEvent() {
-        if (!Event || !Event.prototype) {
+        if (typeof Event === 'undefined' || !Event || !Event.prototype) {
             return;
         }
         if ((/** @type {?} */ (Event.prototype))[stopMethodSymbol]) {
@@ -2504,8 +2505,9 @@ DomEventsPlugin.decorators = [
 ];
 /** @nocollapse */
 DomEventsPlugin.ctorParameters = () => [
-    { type: undefined, decorators: [{ type: Inject, args: [DOCUMENT$1,] },] },
-    { type: NgZone, },
+    { type: undefined, decorators: [{ type: Inject, args: [DOCUMENT$1,] }] },
+    { type: NgZone },
+    { type: undefined, decorators: [{ type: Optional }, { type: Inject, args: [PLATFORM_ID,] }] }
 ];
 
 /**
@@ -2620,8 +2622,6 @@ class HammerGestureConfig {
 HammerGestureConfig.decorators = [
     { type: Injectable }
 ];
-/** @nocollapse */
-HammerGestureConfig.ctorParameters = () => [];
 class HammerGesturesPlugin extends EventManagerPlugin {
     /**
      * @param {?} doc
@@ -2677,9 +2677,9 @@ HammerGesturesPlugin.decorators = [
 ];
 /** @nocollapse */
 HammerGesturesPlugin.ctorParameters = () => [
-    { type: undefined, decorators: [{ type: Inject, args: [DOCUMENT$1,] },] },
-    { type: HammerGestureConfig, decorators: [{ type: Inject, args: [HAMMER_GESTURE_CONFIG,] },] },
-    { type: ɵConsole, },
+    { type: undefined, decorators: [{ type: Inject, args: [DOCUMENT$1,] }] },
+    { type: HammerGestureConfig, decorators: [{ type: Inject, args: [HAMMER_GESTURE_CONFIG,] }] },
+    { type: ɵConsole }
 ];
 
 /**
@@ -2829,7 +2829,7 @@ KeyEventsPlugin.decorators = [
 ];
 /** @nocollapse */
 KeyEventsPlugin.ctorParameters = () => [
-    { type: undefined, decorators: [{ type: Inject, args: [DOCUMENT$1,] },] },
+    { type: undefined, decorators: [{ type: Inject, args: [DOCUMENT$1,] }] }
 ];
 
 /**
@@ -3014,7 +3014,7 @@ DomSanitizerImpl.decorators = [
 ];
 /** @nocollapse */
 DomSanitizerImpl.ctorParameters = () => [
-    { type: undefined, decorators: [{ type: Inject, args: [DOCUMENT$1,] },] },
+    { type: undefined, decorators: [{ type: Inject, args: [DOCUMENT$1,] }] }
 ];
 /**
  * @abstract
@@ -3172,7 +3172,7 @@ BrowserModule.decorators = [
 ];
 /** @nocollapse */
 BrowserModule.ctorParameters = () => [
-    { type: BrowserModule, decorators: [{ type: Optional }, { type: SkipSelf },] },
+    { type: BrowserModule, decorators: [{ type: Optional }, { type: SkipSelf }] }
 ];
 
 /**
@@ -3458,8 +3458,6 @@ class TransferState {
 TransferState.decorators = [
     { type: Injectable }
 ];
-/** @nocollapse */
-TransferState.ctorParameters = () => [];
 /**
  * @param {?} doc
  * @param {?} appId
@@ -3493,8 +3491,6 @@ BrowserTransferStateModule.decorators = [
                 providers: [{ provide: TransferState, useFactory: initTransferState, deps: [DOCUMENT$1, APP_ID] }],
             },] }
 ];
-/** @nocollapse */
-BrowserTransferStateModule.ctorParameters = () => [];
 
 /**
  * @fileoverview added by tsickle
@@ -3575,7 +3571,7 @@ class By {
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-const VERSION = new Version('6.0.3');
+const VERSION = new Version('6.0.4');
 
 /**
  * @fileoverview added by tsickle

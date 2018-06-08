@@ -1,8 +1,7 @@
 import { BrowserModule } from '../../node_modules/@angular/platform-browser';
 import { BrowserAnimationsModule } from '../../node_modules/@angular/platform-browser/animations';
 import { NgModule } from '../../node_modules/@angular/core';
-import { MatTableDataSource, MatTableModule, MatButtonModule } from "../../node_modules/@angular/material";
-import { MDBBootstrapModule } from "angular-bootstrap-md";
+import { MatTableModule, MatButtonModule, MatIconModule, MatGridListModule } from "../../node_modules/@angular/material";
 
 
 // import { faMoneyBillAlt } from '../../node_modules/@fortawesome/fontawesome-free-regular';
@@ -25,7 +24,8 @@ import { BillsTableComponent } from './components/bills-table/bills-table.compon
         BrowserAnimationsModule,
         MatTableModule,
         MatButtonModule,
-        MDBBootstrapModule
+        MatIconModule,
+        MatGridListModule
     ],
     providers: [],
     bootstrap: [AppComponent]

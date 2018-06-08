@@ -1,5 +1,5 @@
 /**
- * @license Angular v6.0.3
+ * @license Angular v6.0.4
  * (c) 2010-2018 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -161,8 +161,6 @@ BrowserTestingModule.decorators = [
                 ]
             },] }
 ];
-/** @nocollapse */
-BrowserTestingModule.ctorParameters = () => [];
 
 /**
  * @fileoverview added by tsickle

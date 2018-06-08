@@ -1,5 +1,5 @@
 /**
- * @license Angular v6.0.3
+ * @license Angular v6.0.4
  * (c) 2010-2018 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -92,6 +92,16 @@ function __spread() {
     return ar;
 }
 
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+function isBrowser() {
+    return (typeof window !== 'undefined' && typeof window.document !== 'undefined');
+}
 function optimizeGroupPlayer(players) {
     switch (players.length) {
         case 0:
@@ -202,7 +212,7 @@ var _matches = function (element, selector) {
 var _query = function (element, selector, multi) {
     return [];
 };
-if (typeof Element != 'undefined') {
+if (isBrowser()) {
     // this is well supported in all browsers
     _contains = function (elm1, elm2) { return elm1.contains(elm2); };
     if (Element.prototype.matches) {
@@ -271,6 +281,13 @@ function hypenatePropsObject(object) {
 }
 
 /**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
  * @experimental
  */
 var NoopAnimationDriver = /** @class */ (function () {
@@ -294,8 +311,6 @@ var NoopAnimationDriver = /** @class */ (function () {
     NoopAnimationDriver.decorators = [
         { type: core.Injectable }
     ];
-    /** @nocollapse */
-    NoopAnimationDriver.ctorParameters = function () { return []; };
     return NoopAnimationDriver;
 }());
 /**
@@ -308,6 +323,13 @@ var AnimationDriver = /** @class */ (function () {
     return AnimationDriver;
 }());
 
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
 var ONE_SECOND = 1000;
 var SUBSTITUTION_EXPR_START = '{{';
 var SUBSTITUTION_EXPR_END = '}}';
@@ -331,8 +353,7 @@ function _convertTimeValueToMS(value, unit) {
     switch (unit) {
         case 's':
             return value * ONE_SECOND;
-        default:
-            // ms or something else
+        default:// ms or something else
             return value;
     }
 }
@@ -637,6 +658,13 @@ function makeLambdaFromStates(lhs, rhs) {
     };
 }
 
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
 var SELF_TOKEN = ':self';
 var SELF_TOKEN_REGEX = new RegExp("s*" + SELF_TOKEN + "s*,?", 'g');
 /*
@@ -967,7 +995,7 @@ var AnimationAstBuilderVisitor = /** @class */ (function () {
         }
         var limit = length - 1;
         var currentTime = context.currentTime;
-        var currentAnimateTimings = (context.currentAnimateTimings);
+        var currentAnimateTimings = context.currentAnimateTimings;
         var animateDuration = currentAnimateTimings.duration;
         keyframes.forEach(function (kf, i) {
             var offset = generatedOffset > 0 ? (i == limit ? 1 : (generatedOffset * i)) : offsets[i];
@@ -1002,7 +1030,7 @@ var AnimationAstBuilderVisitor = /** @class */ (function () {
         };
     };
     AnimationAstBuilderVisitor.prototype.visitQuery = function (metadata, context) {
-        var parentSelector = (context.currentQuerySelector);
+        var parentSelector = context.currentQuerySelector;
         var options = (metadata.options || {});
         context.queryCount++;
         context.currentQuery = metadata;
@@ -1113,7 +1141,7 @@ function normalizeAnimationOptions(options) {
     if (options) {
         options = copyObj(options);
         if (options['params']) {
-            options['params'] = (normalizeParams(options['params']));
+            options['params'] = normalizeParams(options['params']);
         }
     }
     else {
@@ -1166,6 +1194,13 @@ var ElementInstructionMap = /** @class */ (function () {
     return ElementInstructionMap;
 }());
 
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
 var ONE_FRAME_IN_MILLISECONDS = 1;
 var ENTER_TOKEN = ':enter';
 var ENTER_TOKEN_REGEX = new RegExp(ENTER_TOKEN, 'g');
@@ -1415,7 +1450,7 @@ var AnimationTimelineBuilderVisitor = /** @class */ (function () {
     };
     AnimationTimelineBuilderVisitor.prototype.visitStyle = function (ast, context) {
         var timeline = context.currentTimeline;
-        var timings = (context.currentAnimateTimings);
+        var timings = context.currentAnimateTimings;
         // this is a special case for when a style() call
         // directly follows  an animate() call (but not inside of an animate() call)
         if (!timings && timeline.getCurrentStyleProperties().length) {
@@ -1431,7 +1466,7 @@ var AnimationTimelineBuilderVisitor = /** @class */ (function () {
         context.previousNode = ast;
     };
     AnimationTimelineBuilderVisitor.prototype.visitKeyframes = function (ast, context) {
-        var currentAnimateTimings = (context.currentAnimateTimings);
+        var currentAnimateTimings = context.currentAnimateTimings;
         var startTime = (context.currentTimeline).duration;
         var duration = currentAnimateTimings.duration;
         var innerContext = context.createSubContext();
@@ -1494,7 +1529,7 @@ var AnimationTimelineBuilderVisitor = /** @class */ (function () {
         context.previousNode = ast;
     };
     AnimationTimelineBuilderVisitor.prototype.visitStagger = function (ast, context) {
-        var parentContext = (context.parentContext);
+        var parentContext = context.parentContext;
         var tl = context.currentTimeline;
         var timings = ast.timings;
         var duration = Math.abs(timings.duration);
@@ -1566,7 +1601,7 @@ var AnimationTimelineContext = /** @class */ (function () {
         }
         var newParams = newOptions.params;
         if (newParams) {
-            var paramsToUpdate_1 = (optionsToUpdate.params);
+            var paramsToUpdate_1 = optionsToUpdate.params;
             if (!paramsToUpdate_1) {
                 paramsToUpdate_1 = this.options.params = {};
             }
@@ -1633,7 +1668,6 @@ var AnimationTimelineContext = /** @class */ (function () {
             results.push(this.element);
         }
         if (selector.length > 0) {
-            // if :self is only used then the selector is empty
             selector = selector.replace(ENTER_TOKEN_REGEX, '.' + this._enterClassName);
             selector = selector.replace(LEAVE_TOKEN_REGEX, '.' + this._leaveClassName);
             var multi = limit != 1;
@@ -1669,7 +1703,7 @@ var TimelineBuilder = /** @class */ (function () {
             this._elementTimelineStylesLookup = new Map();
         }
         this._localTimelineStyles = Object.create(this._backFill, {});
-        this._globalTimelineStyles = (this._elementTimelineStylesLookup.get(element));
+        this._globalTimelineStyles = this._elementTimelineStylesLookup.get(element);
         if (!this._globalTimelineStyles) {
             this._globalTimelineStyles = this._localTimelineStyles;
             this._elementTimelineStylesLookup.set(element, this._localTimelineStyles);
@@ -1716,7 +1750,7 @@ var TimelineBuilder = /** @class */ (function () {
         if (this._currentKeyframe) {
             this._previousKeyframe = this._currentKeyframe;
         }
-        this._currentKeyframe = (this._keyframes.get(this.duration));
+        this._currentKeyframe = this._keyframes.get(this.duration);
         if (!this._currentKeyframe) {
             this._currentKeyframe = Object.create(this._backFill, {});
             this._keyframes.set(this.duration, this._currentKeyframe);
@@ -1885,19 +1919,19 @@ var SubTimelineBuilder = /** @class */ (function (_super) {
             oldFirstKeyframe['offset'] = roundOffset(startingGap);
             newKeyframes.push(oldFirstKeyframe);
             /*
-                    When the keyframe is stretched then it means that the delay before the animation
-                    starts is gone. Instead the first keyframe is placed at the start of the animation
-                    and it is then copied to where it starts when the original delay is over. This basically
-                    means nothing animates during that delay, but the styles are still renderered. For this
-                    to work the original offset values that exist in the original keyframes must be "warped"
-                    so that they can take the new keyframe + delay into account.
-            
-                    delay=1000, duration=1000, keyframes = 0 .5 1
-            
-                    turns into
-            
-                    delay=0, duration=2000, keyframes = 0 .33 .66 1
-                   */
+              When the keyframe is stretched then it means that the delay before the animation
+              starts is gone. Instead the first keyframe is placed at the start of the animation
+              and it is then copied to where it starts when the original delay is over. This basically
+              means nothing animates during that delay, but the styles are still renderered. For this
+              to work the original offset values that exist in the original keyframes must be "warped"
+              so that they can take the new keyframe + delay into account.
+      
+              delay=1000, duration=1000, keyframes = 0 .5 1
+      
+              turns into
+      
+              delay=0, duration=2000, keyframes = 0 .33 .66 1
+             */
             // offsets between 1 ... n -1 are all warped by the keyframe stretch
             var limit = keyframes.length - 1;
             for (var i = 1; i <= limit; i++) {
@@ -1993,6 +2027,13 @@ var NoopAnimationStyleNormalizer = /** @class */ (function () {
     return NoopAnimationStyleNormalizer;
 }());
 
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
 var WebAnimationsStyleNormalizer = /** @class */ (function (_super) {
     __extends(WebAnimationsStyleNormalizer, _super);
     function WebAnimationsStyleNormalizer() {
@@ -2194,6 +2235,13 @@ function balanceProperties(obj, key1, key2) {
     }
 }
 
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
 var EMPTY_INSTRUCTION_MAP = new ElementInstructionMap();
 var TimelineAnimationEngine = /** @class */ (function () {
     function TimelineAnimationEngine(_driver, _normalizer) {
@@ -2315,6 +2363,13 @@ var TimelineAnimationEngine = /** @class */ (function () {
     return TimelineAnimationEngine;
 }());
 
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
 var QUEUED_CLASSNAME = 'ng-animate-queued';
 var QUEUED_SELECTOR = '.ng-animate-queued';
 var DISABLED_CLASSNAME = 'ng-animate-disabled';
@@ -2364,7 +2419,7 @@ var StateValue = /** @class */ (function () {
     StateValue.prototype.absorbOptions = function (options) {
         var newParams = options.params;
         if (newParams) {
-            var oldParams_1 = (this.options.params);
+            var oldParams_1 = this.options.params;
             Object.keys(newParams).forEach(function (prop) {
                 if (oldParams_1[prop] == null) {
                     oldParams_1[prop] = newParams[prop];
@@ -2376,7 +2431,6 @@ var StateValue = /** @class */ (function () {
 }());
 var VOID_VALUE = 'void';
 var DEFAULT_STATE_VALUE = new StateValue(VOID_VALUE);
-var DELETED_STATE_VALUE = new StateValue('DELETED');
 var AnimationTransitionNamespace = /** @class */ (function () {
     function AnimationTransitionNamespace(id, hostElement, _engine) {
         this.id = id;
@@ -2410,9 +2464,6 @@ var AnimationTransitionNamespace = /** @class */ (function () {
             triggersWithStates[name] = DEFAULT_STATE_VALUE;
         }
         return function () {
-            // the event listener is removed AFTER the flush has occurred such
-            // that leave animations callbacks can fire (otherwise if the node
-            // is removed in between then the listeners would be deregistered)
             // the event listener is removed AFTER the flush has occurred such
             // that leave animations callbacks can fire (otherwise if the node
             // is removed in between then the listeners would be deregistered)
@@ -2464,9 +2515,6 @@ var AnimationTransitionNamespace = /** @class */ (function () {
         triggersWithStates[triggerName] = toState;
         if (!fromState) {
             fromState = DEFAULT_STATE_VALUE;
-        }
-        else if (fromState === DELETED_STATE_VALUE) {
-            return player;
         }
         var isRemoval = toState.value === VOID_VALUE;
         // normally this isn't reached by here, however, if an object expression
@@ -2609,7 +2657,7 @@ var AnimationTransitionNamespace = /** @class */ (function () {
                 visitedTriggers_1.add(triggerName);
                 var trigger = _this._triggers[triggerName];
                 var transition = trigger.fallbackTransition;
-                var elementStates = (_this._engine.statesByElement.get(element));
+                var elementStates = _this._engine.statesByElement.get(element);
                 var fromState = elementStates[triggerName] || DEFAULT_STATE_VALUE;
                 var toState = new StateValue(VOID_VALUE);
                 var player = new TransitionAnimationPlayer(_this.id, triggerName, element);
@@ -2755,9 +2803,7 @@ var TransitionAnimationEngine = /** @class */ (function () {
         this.onRemovalComplete = function (element, context) { };
     }
     /** @internal */
-    /** @internal */
-    TransitionAnimationEngine.prototype._onRemovalComplete = /** @internal */
-    function (element, context) { this.onRemovalComplete(element, context); };
+    TransitionAnimationEngine.prototype._onRemovalComplete = function (element, context) { this.onRemovalComplete(element, context); };
     Object.defineProperty(TransitionAnimationEngine.prototype, "queuedPlayers", {
         get: function () {
             var players = [];
@@ -2976,10 +3022,6 @@ var TransitionAnimationEngine = /** @class */ (function () {
                 }
             });
         }
-        var stateMap = this.statesByElement.get(element);
-        if (stateMap) {
-            Object.keys(stateMap).forEach(function (triggerName) { return stateMap[triggerName] = DELETED_STATE_VALUE; });
-        }
     };
     TransitionAnimationEngine.prototype.finishActiveQueriedAnimationOnElement = function (element) {
         var players = this.playersByQueriedElement.get(element);
@@ -3130,11 +3172,11 @@ var TransitionAnimationEngine = /** @class */ (function () {
         });
         cleanupFns.push(function () {
             enterNodeMap.forEach(function (nodes, root) {
-                var className = (enterNodeMapIds.get(root));
+                var className = enterNodeMapIds.get(root);
                 nodes.forEach(function (node) { return removeClass(node, className); });
             });
             leaveNodeMap.forEach(function (nodes, root) {
-                var className = (leaveNodeMapIds.get(root));
+                var className = leaveNodeMapIds.get(root);
                 nodes.forEach(function (node) { return removeClass(node, className); });
             });
             allLeaveNodes.forEach(function (element) { _this.processLeaveNode(element); });
@@ -3159,9 +3201,9 @@ var TransitionAnimationEngine = /** @class */ (function () {
                     player.destroy();
                     return;
                 }
-                var leaveClassName = (leaveNodeMapIds.get(element));
-                var enterClassName = (enterNodeMapIds.get(element));
-                var instruction = (_this._buildInstruction(entry, subTimelines, enterClassName, leaveClassName));
+                var leaveClassName = leaveNodeMapIds.get(element);
+                var enterClassName = enterNodeMapIds.get(element);
+                var instruction = _this._buildInstruction(entry, subTimelines, enterClassName, leaveClassName);
                 if (instruction.errors && instruction.errors.length) {
                     erroneousTransitions.push(instruction);
                     return;
@@ -3187,7 +3229,7 @@ var TransitionAnimationEngine = /** @class */ (function () {
                 instruction.preStyleProps.forEach(function (stringMap, element) {
                     var props = Object.keys(stringMap);
                     if (props.length) {
-                        var setVal_1 = (allPreStyleElements.get(element));
+                        var setVal_1 = allPreStyleElements.get(element);
                         if (!setVal_1) {
                             allPreStyleElements.set(element, setVal_1 = new Set());
                         }
@@ -3196,7 +3238,7 @@ var TransitionAnimationEngine = /** @class */ (function () {
                 });
                 instruction.postStyleProps.forEach(function (stringMap, element) {
                     var props = Object.keys(stringMap);
-                    var setVal = (allPostStyleElements.get(element));
+                    var setVal = allPostStyleElements.get(element);
                     if (!setVal) {
                         allPostStyleElements.set(element, setVal = new Set());
                     }
@@ -3625,9 +3667,7 @@ var TransitionAnimationPlayer = /** @class */ (function () {
     };
     TransitionAnimationPlayer.prototype.getPosition = function () { return this.queued ? 0 : this._player.getPosition(); };
     /* @internal */
-    /* @internal */
-    TransitionAnimationPlayer.prototype.triggerCallback = /* @internal */
-    function (phaseName) {
+    TransitionAnimationPlayer.prototype.triggerCallback = function (phaseName) {
         var p = this._player;
         if (p.triggerCallback) {
             p.triggerCallback(phaseName);
@@ -3729,15 +3769,12 @@ function buildRootMap(roots, nodes) {
             return root;
         var parent = node.parentNode;
         if (rootMap.has(parent)) {
-            // ngIf inside @trigger
             root = parent;
         }
         else if (nodeSet.has(parent)) {
-            // ngIf inside ngIf
             root = NULL_NODE;
         }
         else {
-            // recurse upwards
             root = getRoot(parent);
         }
         localRootMap.set(node, root);
@@ -4127,9 +4164,7 @@ var CssKeyframesPlayer = /** @class */ (function () {
         this._styler = new ElementAnimationStyleHandler(this.element, this.animationName, this._duration, this._delay, this.easing, DEFAULT_FILL_MODE, function () { return _this.finish(); });
     };
     /* @internal */
-    /* @internal */
-    CssKeyframesPlayer.prototype.triggerCallback = /* @internal */
-    function (phaseName) {
+    CssKeyframesPlayer.prototype.triggerCallback = function (phaseName) {
         var methods = phaseName == 'start' ? this._onStartFns : this._onDoneFns;
         methods.forEach(function (fn) { return fn(); });
         methods.length = 0;
@@ -4151,6 +4186,13 @@ var CssKeyframesPlayer = /** @class */ (function () {
     return CssKeyframesPlayer;
 }());
 
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
 var DirectStylePlayer = /** @class */ (function (_super) {
     __extends(DirectStylePlayer, _super);
     function DirectStylePlayer(element, styles) {
@@ -4355,9 +4397,7 @@ var WebAnimationsPlayer = /** @class */ (function () {
         }
     };
     /** @internal */
-    /** @internal */
-    WebAnimationsPlayer.prototype._triggerWebAnimation = /** @internal */
-    function (element, keyframes, options) {
+    WebAnimationsPlayer.prototype._triggerWebAnimation = function (element, keyframes, options) {
         // jscompiler doesn't seem to know animate is a native property because it's not fully
         // supported yet across common browsers (we polyfill it for Edge/Safari) [CL #143630929]
         return element['animate'](keyframes, options);
@@ -4429,9 +4469,7 @@ var WebAnimationsPlayer = /** @class */ (function () {
         this.currentSnapshot = styles;
     };
     /* @internal */
-    /* @internal */
-    WebAnimationsPlayer.prototype.triggerCallback = /* @internal */
-    function (phaseName) {
+    WebAnimationsPlayer.prototype.triggerCallback = function (phaseName) {
         var methods = phaseName == 'start' ? this._onStartFns : this._onDoneFns;
         methods.forEach(function (fn) { return fn(); });
         methods.length = 0;
@@ -4487,7 +4525,7 @@ function supportsWebAnimations() {
     return typeof getElementAnimateFn() === 'function';
 }
 function getElementAnimateFn() {
-    return (typeof Element !== 'undefined' && Element.prototype['animate']) || {};
+    return (isBrowser() && Element.prototype['animate']) || {};
 }
 
 /**
@@ -4505,6 +4543,11 @@ function getElementAnimateFn() {
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
+/**
+ * @module
+ * @description
+ * Entry point for all animation APIs of the animation browser package.
+ */
 
 /**
  * @license
@@ -4513,6 +4556,23 @@ function getElementAnimateFn() {
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
+/**
+ * @module
+ * @description
+ * Entry point for all public APIs of this package.
+ */
+
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+// This file is not used to build this module. It is only used during editing
+// by the TypeScript language service and during build for verifcation. `ngc`
+// replaces this file with production index.ts when it rewrites private symbol
+// names.
 
 /**
  * Generated bundle index. Do not edit.
