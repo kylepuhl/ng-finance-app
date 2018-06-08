@@ -1,5 +1,5 @@
 /**
- * @license Angular v6.0.3
+ * @license Angular v6.0.4
  * (c) 2010-2018 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -24,7 +24,7 @@ import { take } from 'rxjs/operators';
  *
  * Mock Connection to represent a {\@link Connection} for tests.
  *
- * @deprecated use \@angular/common/http instead
+ * @deprecated see https://angular.io/guide/http
  */
 class MockConnection {
     /**
@@ -182,7 +182,7 @@ class MockConnection {
  *
  * This method only exists in the mock implementation, not in real Backends.
  *
- * @deprecated use \@angular/common/http instead
+ * @deprecated see https://angular.io/guide/http
  */
 class MockBackend {
     constructor() {

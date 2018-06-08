@@ -1,28 +1,6 @@
-.paycheck-panel {
+.paycheck-card {
     background: darkgrey;
-    padding: 20px 10px;
-    margin: 10px;
-    margin-bottom: 50px;
     color: white;
-    display: flex;
-
-}
-
-.left-column {
-    justify-content: left;
-}
-
-.right-column {
-    justify-content: right;
-}
-
-.column {
-    flex: 50%;
-}
-
-.container {
-    display: grid;
-    grid-template-columns: 50% auto;
 }
 
 .h6 {
