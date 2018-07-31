@@ -764,6 +764,13 @@ class MatIcon extends _MatIconMixinBase {
      */
     _setSvgElement(svg) {
         this._clearSvgElement();
+        // Workaround for IE11 and Edge ignoring `style` tags inside dynamically-created SVGs.
+        // See: https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/10898469/
+        // Do this before inserting the element into the DOM, in order to avoid a style recalculation.
+        const /** @type {?} */ styleTags = /** @type {?} */ (svg.querySelectorAll('style'));
+        for (let /** @type {?} */ i = 0; i < styleTags.length; i++) {
+            styleTags[i].textContent += ' ';
+        }
         this._elementRef.nativeElement.appendChild(svg);
     }
     /**
@@ -771,11 +778,16 @@ class MatIcon extends _MatIconMixinBase {
      */
     _clearSvgElement() {
         const /** @type {?} */ layoutElement = this._elementRef.nativeElement;
-        const /** @type {?} */ childCount = layoutElement.childNodes.length;
-        // Remove existing child nodes and add the new SVG element. Note that we can't
-        // use innerHTML, because IE will throw if the element has a data binding.
-        for (let /** @type {?} */ i = 0; i < childCount; i++) {
-            layoutElement.removeChild(layoutElement.childNodes[i]);
+        let /** @type {?} */ childCount = layoutElement.childNodes.length;
+        // Remove existing non-element child nodes and SVGs, and add the new SVG element. Note that
+        // we can't use innerHTML, because IE will throw if the element has a data binding.
+        while (childCount--) {
+            const /** @type {?} */ child = layoutElement.childNodes[childCount];
+            // 1 corresponds to Node.ELEMENT_NODE. We remove all non-element nodes in order to get rid
+            // of any loose text nodes, as well as any SVG elements in order to remove any old icons.
+            if (child.nodeType !== 1 || child.nodeName.toLowerCase() === 'svg') {
+                layoutElement.removeChild(child);
+            }
         }
     }
     /**

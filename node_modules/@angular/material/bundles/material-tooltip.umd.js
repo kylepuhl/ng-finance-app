@@ -26,12 +26,15 @@ See the Apache Version 2.0 License for specific language governing permissions
 and limitations under the License.
 ***************************************************************************** */
 
-var __assign = Object.assign || function __assign(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-    }
-    return t;
+var __assign = function() {
+    __assign = Object.assign || function __assign(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
 };
 
 /**
@@ -160,6 +163,12 @@ var MatTooltip = /** @class */ (function () {
             // we're on iOS and the tooltip is attached on an input or textarea, we clear
             // the `user-select` to avoid these issues.
             element.style.webkitUserSelect = element.style.userSelect = '';
+        }
+        // Hammer applies `-webkit-user-drag: none` on all elements by default,
+        // which breaks the native drag&drop. If the consumer explicitly made
+        // the element draggable, clear the `-webkit-user-drag`.
+        if (element.draggable && element.style['webkitUserDrag'] === 'none') {
+            element.style['webkitUserDrag'] = '';
         }
         _focusMonitor.monitor(element).pipe(operators.takeUntil(this._destroyed)).subscribe(function (origin) {
             // Note that the focus monitor runs outside the Angular zone.
@@ -856,6 +865,7 @@ var MatTooltipModule = /** @class */ (function () {
     MatTooltipModule.decorators = [
         { type: core.NgModule, args: [{
                     imports: [
+                        a11y.A11yModule,
                         common.CommonModule,
                         overlay.OverlayModule,
                         core$1.MatCommonModule,

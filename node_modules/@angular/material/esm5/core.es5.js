@@ -135,12 +135,14 @@ var MatCommonModule = /** @class */ (function () {
      * @return {?}
      */
     function () {
-        if (this._document && typeof getComputedStyle === 'function') {
+        // We need to assert that the `body` is defined, because these checks run very early
+        // and the `body` won't be defined if the consumer put their scripts in the `head`.
+        if (this._document && this._document.body && typeof getComputedStyle === 'function') {
             var /** @type {?} */ testElement = this._document.createElement('div');
             testElement.classList.add('mat-theme-loaded-marker');
             this._document.body.appendChild(testElement);
             var /** @type {?} */ computedStyle = getComputedStyle(testElement);
-            // In some situations, the computed style of the test element can be null. For example in
+            // In some situations the computed style of the test element can be null. For example in
             // Firefox, the computed style is null if an application is running inside of a hidden iframe.
             // See: https://bugzilla.mozilla.org/show_bug.cgi?id=548397
             if (computedStyle && computedStyle.display !== 'none') {
@@ -528,7 +530,7 @@ function MAT_DATE_LOCALE_FACTORY() {
  * No longer needed since MAT_DATE_LOCALE has been changed to a scoped injectable.
  * If you are importing and providing this in your code you can simply remove it.
  * @deprecated
- * \@deletion-target 7.0.0
+ * \@breaking-change 7.0.0
  */
 var /** @type {?} */ MAT_DATE_LOCALE_PROVIDER = { provide: MAT_DATE_LOCALE, useExisting: LOCALE_ID };
 /**
@@ -1344,6 +1346,23 @@ var ErrorStateMatcher = /** @class */ (function () {
  * More info at http://hammerjs.github.io/api/.
  */
 var /** @type {?} */ MAT_HAMMER_OPTIONS = new InjectionToken('MAT_HAMMER_OPTIONS');
+var /** @type {?} */ ANGULAR_MATERIAL_SUPPORTED_HAMMER_GESTURES = [
+    'longpress',
+    'slide',
+    'slidestart',
+    'slideend',
+    'slideright',
+    'slideleft'
+];
+var ɵ0$2 = function () { }, ɵ1 = function () { };
+/**
+ * Fake HammerInstance that is used when a Hammer instance is requested when HammerJS has not
+ * been loaded on the page.
+ */
+var /** @type {?} */ noopHammerInstance = {
+    on: ɵ0$2,
+    off: ɵ1,
+};
 /**
  * Adjusts configuration of our gesture library, Hammer.
  */
@@ -1352,18 +1371,10 @@ var GestureConfig = /** @class */ (function (_super) {
     function GestureConfig(_hammerOptions, commonModule) {
         var _this = _super.call(this) || this;
         _this._hammerOptions = _hammerOptions;
-        _this._hammer = typeof window !== 'undefined' ? (/** @type {?} */ (window)).Hammer : null;
         /**
          * List of new event names to add to the gesture support list
          */
-        _this.events = _this._hammer ? [
-            'longpress',
-            'slide',
-            'slidestart',
-            'slideend',
-            'slideright',
-            'slideleft'
-        ] : [];
+        _this.events = ANGULAR_MATERIAL_SUPPORTED_HAMMER_GESTURES;
         if (commonModule) {
             commonModule._checkHammerIsAvailable();
         }
@@ -1409,11 +1420,23 @@ var GestureConfig = /** @class */ (function (_super) {
      * @return {?} Newly-created HammerJS instance.
      */
     function (element) {
-        var /** @type {?} */ mc = new this._hammer(element, this._hammerOptions || undefined);
+        var /** @type {?} */ hammer = typeof window !== 'undefined' ? (/** @type {?} */ (window)).Hammer : null;
+        if (!hammer) {
+            // If HammerJS is not loaded here, return the noop HammerInstance. This is necessary to
+            // ensure that omitting HammerJS completely will not cause any errors while *also* supporting
+            // the lazy-loading of HammerJS via the HAMMER_LOADER token introduced in Angular 6.1.
+            // Because we can't depend on HAMMER_LOADER's existance until 7.0, we have to always set
+            // `this.events` to the set we support, instead of conditionally setting it to `[]` if
+            // `HAMMER_LOADER` is present (and then throwing an Error here if `window.Hammer` is
+            // undefined).
+            // @breaking-change 7.0.0
+            return noopHammerInstance;
+        }
+        var /** @type {?} */ mc = new hammer(element, this._hammerOptions || undefined);
         // Default Hammer Recognizers.
-        var /** @type {?} */ pan = new this._hammer.Pan();
-        var /** @type {?} */ swipe = new this._hammer.Swipe();
-        var /** @type {?} */ press = new this._hammer.Press();
+        var /** @type {?} */ pan = new hammer.Pan();
+        var /** @type {?} */ swipe = new hammer.Swipe();
+        var /** @type {?} */ press = new hammer.Press();
         // Notice that a HammerJS recognizer can only depend on one other recognizer once.
         // Otherwise the previous `recognizeWith` will be dropped.
         // TODO: Confirm threshold numbers with Material Design UX Team
@@ -1927,9 +1950,8 @@ function distanceToFurthestCorner(x, y, rect) {
  */
 var /** @type {?} */ MAT_RIPPLE_GLOBAL_OPTIONS = new InjectionToken('mat-ripple-global-options');
 var MatRipple = /** @class */ (function () {
-    function MatRipple(_elementRef, ngZone, platform, globalOptions, _animationMode) {
+    function MatRipple(_elementRef, ngZone, platform, globalOptions, animationMode) {
         this._elementRef = _elementRef;
-        this._animationMode = _animationMode;
         /**
          * If set, the radius in pixels of foreground ripples when fully expanded. If unset, the radius
          * will be the distance from the center of the ripple to the furthest corner of the host element's
@@ -1941,7 +1963,7 @@ var MatRipple = /** @class */ (function () {
          * setting it to 0.5 will cause the animations to take twice as long.
          * A changed speedFactor will not modify the fade-out duration of the ripples.
          * @deprecated Use the [matRippleAnimation] binding instead.
-         * \@deletion-target 7.0.0
+         * \@breaking-change 7.0.0
          */
         this.speedFactor = 1;
         this._disabled = false;
@@ -1951,6 +1973,9 @@ var MatRipple = /** @class */ (function () {
         this._isInitialized = false;
         this._globalOptions = globalOptions || {};
         this._rippleRenderer = new RippleRenderer(this, ngZone, _elementRef, platform);
+        if (animationMode === 'NoopAnimations') {
+            this._globalOptions.animation = { enterDuration: 0, exitDuration: 0 };
+        }
     }
     Object.defineProperty(MatRipple.prototype, "disabled", {
         get: /**
@@ -2030,8 +2055,7 @@ var MatRipple = /** @class */ (function () {
                 centered: this.centered,
                 radius: this.radius,
                 color: this.color,
-                animation: this._animationMode === 'NoopAnimations' ?
-                    { enterDuration: 0, exitDuration: 0 } : __assign({}, this._globalOptions.animation, this.animation),
+                animation: __assign({}, this._globalOptions.animation, this.animation),
                 terminateOnPointerUp: this._globalOptions.terminateOnPointerUp,
                 speedFactor: this.speedFactor * (this._globalOptions.baseSpeedFactor || 1),
             };
@@ -2154,7 +2178,8 @@ var MatRippleModule = /** @class */ (function () {
  * \@docs-private
  */
 var MatPseudoCheckbox = /** @class */ (function () {
-    function MatPseudoCheckbox() {
+    function MatPseudoCheckbox(_animationMode) {
+        this._animationMode = _animationMode;
         /**
          * Display state of the checkbox.
          */
@@ -2168,17 +2193,21 @@ var MatPseudoCheckbox = /** @class */ (function () {
         { type: Component, args: [{encapsulation: ViewEncapsulation.None,
                     changeDetection: ChangeDetectionStrategy.OnPush,
                     selector: 'mat-pseudo-checkbox',
-                    styles: [".mat-pseudo-checkbox{width:20px;height:20px;border:2px solid;border-radius:2px;cursor:pointer;display:inline-block;vertical-align:middle;box-sizing:border-box;position:relative;flex-shrink:0;transition:border-color 90ms cubic-bezier(0,0,.2,.1),background-color 90ms cubic-bezier(0,0,.2,.1)}.mat-pseudo-checkbox::after{position:absolute;opacity:0;content:'';border-bottom:2px solid currentColor;transition:opacity 90ms cubic-bezier(0,0,.2,.1)}.mat-pseudo-checkbox.mat-pseudo-checkbox-checked,.mat-pseudo-checkbox.mat-pseudo-checkbox-indeterminate{border:none}.mat-pseudo-checkbox-disabled{cursor:default}.mat-pseudo-checkbox-indeterminate::after{top:9px;left:2px;width:16px;opacity:1}.mat-pseudo-checkbox-checked::after{top:5px;left:3px;width:12px;height:5px;border-left:2px solid currentColor;transform:rotate(-45deg);opacity:1}"],
+                    styles: [".mat-pseudo-checkbox{width:20px;height:20px;border:2px solid;border-radius:2px;cursor:pointer;display:inline-block;vertical-align:middle;box-sizing:border-box;position:relative;flex-shrink:0;transition:border-color 90ms cubic-bezier(0,0,.2,.1),background-color 90ms cubic-bezier(0,0,.2,.1)}.mat-pseudo-checkbox::after{position:absolute;opacity:0;content:'';border-bottom:2px solid currentColor;transition:opacity 90ms cubic-bezier(0,0,.2,.1)}.mat-pseudo-checkbox.mat-pseudo-checkbox-checked,.mat-pseudo-checkbox.mat-pseudo-checkbox-indeterminate{border-color:transparent}._mat-animation-noopable.mat-pseudo-checkbox{transition:none;animation:none}._mat-animation-noopable.mat-pseudo-checkbox::after{transition:none}.mat-pseudo-checkbox-disabled{cursor:default}.mat-pseudo-checkbox-indeterminate::after{top:7px;left:0;width:16px;opacity:1}.mat-pseudo-checkbox-checked::after{top:3px;left:1px;width:12px;height:5px;border-left:2px solid currentColor;transform:rotate(-45deg);opacity:1}"],
                     template: '',
                     host: {
                         'class': 'mat-pseudo-checkbox',
                         '[class.mat-pseudo-checkbox-indeterminate]': 'state === "indeterminate"',
                         '[class.mat-pseudo-checkbox-checked]': 'state === "checked"',
                         '[class.mat-pseudo-checkbox-disabled]': 'disabled',
+                        '[class._mat-animation-noopable]': '_animationMode === "NoopAnimations"',
                     },
                 },] },
     ];
     /** @nocollapse */
+    MatPseudoCheckbox.ctorParameters = function () { return [
+        { type: undefined, decorators: [{ type: Optional }, { type: Inject, args: [ANIMATION_MODULE_TYPE,] },] },
+    ]; };
     MatPseudoCheckbox.propDecorators = {
         "state": [{ type: Input },],
         "disabled": [{ type: Input },],
@@ -2240,7 +2269,7 @@ var MatOptgroup = /** @class */ (function (_super) {
                     encapsulation: ViewEncapsulation.None,
                     changeDetection: ChangeDetectionStrategy.OnPush,
                     inputs: ['disabled'],
-                    styles: [".mat-optgroup-label{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block;line-height:48px;height:48px;padding:0 16px;text-align:left;text-decoration:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:default}.mat-optgroup-label[disabled]{cursor:default}[dir=rtl] .mat-optgroup-label{text-align:right}.mat-optgroup-label .mat-icon{margin-right:16px;vertical-align:middle}.mat-optgroup-label .mat-icon svg{vertical-align:top}[dir=rtl] .mat-optgroup-label .mat-icon{margin-left:16px;margin-right:0}"],
+                    styles: [".mat-optgroup-label{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block;line-height:48px;height:48px;padding:0 16px;text-align:left;text-decoration:none;max-width:100%;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:default}.mat-optgroup-label[disabled]{cursor:default}[dir=rtl] .mat-optgroup-label{text-align:right}.mat-optgroup-label .mat-icon{margin-right:16px;vertical-align:middle}.mat-optgroup-label .mat-icon svg{vertical-align:top}[dir=rtl] .mat-optgroup-label .mat-icon{margin-left:16px;margin-right:0}"],
                     host: {
                         'class': 'mat-optgroup',
                         'role': 'group',
@@ -2408,9 +2437,11 @@ var MatOption = /** @class */ (function () {
      * @return {?}
      */
     function () {
-        this._selected = true;
-        this._changeDetectorRef.markForCheck();
-        this._emitSelectionChangeEvent();
+        if (!this._selected) {
+            this._selected = true;
+            this._changeDetectorRef.markForCheck();
+            this._emitSelectionChangeEvent();
+        }
     };
     /** Deselects the option. */
     /**
@@ -2422,9 +2453,11 @@ var MatOption = /** @class */ (function () {
      * @return {?}
      */
     function () {
-        this._selected = false;
-        this._changeDetectorRef.markForCheck();
-        this._emitSelectionChangeEvent();
+        if (this._selected) {
+            this._selected = false;
+            this._changeDetectorRef.markForCheck();
+            this._emitSelectionChangeEvent();
+        }
     };
     /** Sets focus onto this option. */
     /**
@@ -2622,7 +2655,7 @@ var MatOption = /** @class */ (function () {
                         '(keydown)': '_handleKeydown($event)',
                         'class': 'mat-option',
                     },
-                    styles: [".mat-option{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block;line-height:48px;height:48px;padding:0 16px;text-align:left;text-decoration:none;position:relative;cursor:pointer;outline:0;display:flex;flex-direction:row;max-width:100%;box-sizing:border-box;align-items:center}.mat-option[disabled]{cursor:default}[dir=rtl] .mat-option{text-align:right}.mat-option .mat-icon{margin-right:16px;vertical-align:middle}.mat-option .mat-icon svg{vertical-align:top}[dir=rtl] .mat-option .mat-icon{margin-left:16px;margin-right:0}.mat-option[aria-disabled=true]{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:default}.mat-optgroup .mat-option:not(.mat-option-multiple){padding-left:32px}[dir=rtl] .mat-optgroup .mat-option:not(.mat-option-multiple){padding-left:16px;padding-right:32px}@media screen and (-ms-high-contrast:active){.mat-option{margin:0 1px}.mat-option.mat-active{border:solid 1px currentColor;margin:0}}.mat-option-text{display:inline-block;flex-grow:1;overflow:hidden;text-overflow:ellipsis}.mat-option-ripple{top:0;left:0;right:0;bottom:0;position:absolute;pointer-events:none}@media screen and (-ms-high-contrast:active){.mat-option-ripple{opacity:.5}}.mat-option-pseudo-checkbox{margin-right:8px}[dir=rtl] .mat-option-pseudo-checkbox{margin-left:8px;margin-right:0}"],
+                    styles: [".mat-option{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block;line-height:48px;height:48px;padding:0 16px;text-align:left;text-decoration:none;max-width:100%;position:relative;cursor:pointer;outline:0;display:flex;flex-direction:row;max-width:100%;box-sizing:border-box;align-items:center;-webkit-tap-highlight-color:transparent}.mat-option[disabled]{cursor:default}[dir=rtl] .mat-option{text-align:right}.mat-option .mat-icon{margin-right:16px;vertical-align:middle}.mat-option .mat-icon svg{vertical-align:top}[dir=rtl] .mat-option .mat-icon{margin-left:16px;margin-right:0}.mat-option[aria-disabled=true]{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:default}.mat-optgroup .mat-option:not(.mat-option-multiple){padding-left:32px}[dir=rtl] .mat-optgroup .mat-option:not(.mat-option-multiple){padding-left:16px;padding-right:32px}@media screen and (-ms-high-contrast:active){.mat-option{margin:0 1px}.mat-option.mat-active{border:solid 1px currentColor;margin:0}}.mat-option-text{display:inline-block;flex-grow:1;overflow:hidden;text-overflow:ellipsis}.mat-option-ripple{top:0;left:0;right:0;bottom:0;position:absolute;pointer-events:none}@media screen and (-ms-high-contrast:active){.mat-option-ripple{opacity:.5}}.mat-option-pseudo-checkbox{margin-right:8px}[dir=rtl] .mat-option-pseudo-checkbox{margin-left:8px;margin-right:0}"],
                     template: "<mat-pseudo-checkbox *ngIf=\"multiple\" class=\"mat-option-pseudo-checkbox\" [state]=\"selected ? 'checked' : ''\" [disabled]=\"disabled\"></mat-pseudo-checkbox><span class=\"mat-option-text\"><ng-content></ng-content></span><div class=\"mat-option-ripple\" mat-ripple [matRippleTrigger]=\"_getHostElement()\" [matRippleDisabled]=\"disabled || disableRipple\"></div>",
                     encapsulation: ViewEncapsulation.None,
                     changeDetection: ChangeDetectionStrategy.OnPush,

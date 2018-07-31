@@ -6,7 +6,7 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { AriaDescriber, FocusMonitor } from '@angular/cdk/a11y';
+import { AriaDescriber, FocusMonitor, A11yModule } from '@angular/cdk/a11y';
 import { Directionality } from '@angular/cdk/bidi';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import { ESCAPE } from '@angular/cdk/keycodes';
@@ -158,6 +158,12 @@ class MatTooltip {
             // we're on iOS and the tooltip is attached on an input or textarea, we clear
             // the `user-select` to avoid these issues.
             element.style.webkitUserSelect = element.style.userSelect = '';
+        }
+        // Hammer applies `-webkit-user-drag: none` on all elements by default,
+        // which breaks the native drag&drop. If the consumer explicitly made
+        // the element draggable, clear the `-webkit-user-drag`.
+        if (element.draggable && element.style['webkitUserDrag'] === 'none') {
+            element.style['webkitUserDrag'] = '';
         }
         _focusMonitor.monitor(element).pipe(takeUntil(this._destroyed)).subscribe(origin => {
             // Note that the focus monitor runs outside the Angular zone.
@@ -685,6 +691,7 @@ class MatTooltipModule {
 MatTooltipModule.decorators = [
     { type: NgModule, args: [{
                 imports: [
+                    A11yModule,
                     CommonModule,
                     OverlayModule,
                     MatCommonModule,

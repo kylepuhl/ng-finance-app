@@ -11,6 +11,7 @@ import { ViewportRuler } from '@angular/cdk/scrolling';
 import { AfterContentChecked, AfterContentInit, ChangeDetectorRef, ElementRef, NgZone, OnDestroy, QueryList } from '@angular/core';
 import { CanColor, CanDisable, CanDisableRipple, HasTabIndex, RippleConfig, RippleGlobalOptions, RippleRenderer, RippleTarget, ThemePalette } from '@angular/material/core';
 import { MatInkBar } from '../ink-bar';
+import { FocusMonitor } from '@angular/cdk/a11y';
 /** @docs-private */
 export declare class MatTabNavBase {
     _elementRef: ElementRef;
@@ -39,7 +40,7 @@ export declare class MatTabNav extends _MatTabNavMixinBase implements AfterConte
     constructor(elementRef: ElementRef, _dir: Directionality, _ngZone: NgZone, _changeDetectorRef: ChangeDetectorRef, _viewportRuler: ViewportRuler);
     /**
      * Notifies the component that the active link has been changed.
-     * @deletion-target 7.0.0 `element` parameter to be removed.
+     * @breaking-change 7.0.0 `element` parameter to be removed.
      */
     updateActiveLink(element: ElementRef): void;
     ngAfterContentInit(): void;
@@ -58,10 +59,17 @@ export declare const _MatTabLinkMixinBase: (new (...args: any[]) => HasTabIndex)
 export declare class MatTabLink extends _MatTabLinkMixinBase implements OnDestroy, CanDisable, CanDisableRipple, HasTabIndex, RippleTarget {
     private _tabNavBar;
     _elementRef: ElementRef;
+    /**
+     * @deprecated
+     * @breaking-change 7.0.0 `_focusMonitor` parameter to be made required.
+     */
+    private _focusMonitor;
     /** Whether the tab link is active or not. */
     protected _isActive: boolean;
     /** Reference to the RippleRenderer for the tab-link. */
     protected _tabLinkRipple: RippleRenderer;
+    /** Whether the ripples are globally disabled through the RippleGlobalOptions */
+    private _ripplesGloballyDisabled;
     /** Whether the link is active. */
     active: boolean;
     /**
@@ -74,7 +82,12 @@ export declare class MatTabLink extends _MatTabLinkMixinBase implements OnDestro
      * @docs-private
      */
     readonly rippleDisabled: boolean;
-    constructor(_tabNavBar: MatTabNav, _elementRef: ElementRef, ngZone: NgZone, platform: Platform, globalOptions: RippleGlobalOptions, tabIndex: string);
+    constructor(_tabNavBar: MatTabNav, _elementRef: ElementRef, ngZone: NgZone, platform: Platform, globalOptions: RippleGlobalOptions, tabIndex: string, 
+        /**
+         * @deprecated
+         * @breaking-change 7.0.0 `_focusMonitor` parameter to be made required.
+         */
+        _focusMonitor?: FocusMonitor | undefined);
     ngOnDestroy(): void;
     /**
      * Handles the click event, preventing default navigation if the tab link is disabled.

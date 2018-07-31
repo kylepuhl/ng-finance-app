@@ -5,3 +5,8 @@ table {
 .table-header {
     text-align: center;
 }
+
+.action-buttons {
+    background: lightgray;
+    padding: 10px auto;
+}

@@ -81,6 +81,11 @@ export declare class MatAutocompleteTrigger implements ControlValueAccessor, OnD
      */
     connectedTo: MatAutocompleteOrigin;
     /**
+     * `autocomplete` attribute to be set on the input element.
+     * @docs-private
+     */
+    autocompleteAttribute: string;
+    /**
      * Whether the autocomplete is disabled. When disabled, the element will
      * act as a regular input and the user won't be able to open the panel.
      */
@@ -153,6 +158,7 @@ export declare class MatAutocompleteTrigger implements ControlValueAccessor, OnD
     private _getOverlayConfig();
     private _getOverlayPosition();
     private _getConnectedElement();
+    private _getPanelWidth();
     /** Returns the width of the input element, so the panel width can match it. */
     private _getHostWidth();
     /**

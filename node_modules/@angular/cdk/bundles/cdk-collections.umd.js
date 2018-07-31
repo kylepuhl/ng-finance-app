@@ -27,9 +27,12 @@ and limitations under the License.
 ***************************************************************************** */
 /* global Reflect, Promise */
 
-var extendStatics = Object.setPrototypeOf ||
-    ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-    function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+var extendStatics = function(d, b) {
+    extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return extendStatics(d, b);
+};
 
 function __extends(d, b) {
     extendStatics(d, b);
@@ -290,9 +293,23 @@ SelectionModel = /** @class */ (function () {
      * @return {?}
      */
     function (predicate) {
-        if (this._multiple && this._selected) {
-            this._selected.sort(predicate);
+        if (this._multiple && this.selected) {
+            /** @type {?} */ ((this._selected)).sort(predicate);
         }
+    };
+    /**
+     * Gets whether multiple values can be selected.
+     */
+    /**
+     * Gets whether multiple values can be selected.
+     * @return {?}
+     */
+    SelectionModel.prototype.isMultipleSelection = /**
+     * Gets whether multiple values can be selected.
+     * @return {?}
+     */
+    function () {
+        return this._multiple;
     };
     /**
      * Emits a change event and clears the records of selected and deselected values.

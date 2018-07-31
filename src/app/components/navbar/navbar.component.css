@@ -1,8 +1,20 @@
 .navbar-heading {
     font-size: xx-large;
     font-weight: bold;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
 }
 
 .navbar {
     margin-bottom: 30px;
+    background:#2E9CE6;
+}
+
+.menu-button {
+    float: right;
+}
+
+.fill-space {
+    flex: 1 1 auto;
 }
