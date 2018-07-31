@@ -6,6 +6,7 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import { ElementRef } from '@angular/core';
+import { Location } from '@angular/common';
 import { CanColor } from '@angular/material/core';
 /** @docs-private */
 export declare class MatProgressBarBase {
@@ -19,7 +20,12 @@ export declare const _MatProgressBarMixinBase: (new (...args: any[]) => CanColor
 export declare class MatProgressBar extends _MatProgressBarMixinBase implements CanColor {
     _elementRef: ElementRef;
     _animationMode: string | undefined;
-    constructor(_elementRef: ElementRef, _animationMode?: string | undefined);
+    constructor(_elementRef: ElementRef, _animationMode?: string | undefined, 
+        /**
+         * @deprecated `location` parameter to be made required.
+         * @breaking-change 8.0.0
+         */
+        location?: Location);
     /** Value of the progress bar. Defaults to zero. Mirrored to aria-valuenow. */
     value: number;
     private _value;
@@ -34,8 +40,10 @@ export declare class MatProgressBar extends _MatProgressBarMixinBase implements 
      * Mirrored to mode attribute.
      */
     mode: 'determinate' | 'indeterminate' | 'buffer' | 'query';
-    /** The id of the progress bar. */
+    /** ID of the progress bar. */
     progressbarId: string;
+    /** Attribute to be used for the `fill` attribute on the internal `rect` element. */
+    _rectangleFillValue: string;
     /** Gets the current transform value for the progress bar's primary indicator. */
     _primaryTransform(): {
         transform: string;

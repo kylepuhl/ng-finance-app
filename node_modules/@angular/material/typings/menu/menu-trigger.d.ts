@@ -45,7 +45,7 @@ export declare class MatMenuTrigger implements AfterContentInit, OnDestroy {
     private _openedByMouse;
     /**
      * @deprecated
-     * @deletion-target 7.0.0
+     * @breaking-change 7.0.0
      */
     _deprecatedMatMenuTriggerFor: MatMenuPanel;
     /** References the menu instance that the trigger is associated with. */
@@ -57,7 +57,7 @@ export declare class MatMenuTrigger implements AfterContentInit, OnDestroy {
     /**
      * Event emitted when the associated menu is opened.
      * @deprecated Switch to `menuOpened` instead
-     * @deletion-target 7.0.0
+     * @breaking-change 7.0.0
      */
     readonly onMenuOpen: EventEmitter<void>;
     /** Event emitted when the associated menu is closed. */
@@ -65,7 +65,7 @@ export declare class MatMenuTrigger implements AfterContentInit, OnDestroy {
     /**
      * Event emitted when the associated menu is closed.
      * @deprecated Switch to `menuClosed` instead
-     * @deletion-target 7.0.0
+     * @breaking-change 7.0.0
      */
     readonly onMenuClose: EventEmitter<void>;
     constructor(_overlay: Overlay, _element: ElementRef, _viewContainerRef: ViewContainerRef, _scrollStrategy: any, _parentMenu: MatMenu, _menuItemInstance: MatMenuItem, _dir: Directionality, _focusMonitor?: FocusMonitor | undefined);
@@ -125,11 +125,11 @@ export declare class MatMenuTrigger implements AfterContentInit, OnDestroy {
      */
     private _subscribeToPositions(position);
     /**
-     * This method builds the position strategy for the overlay, so the menu is properly connected
-     * to the trigger.
-     * @returns ConnectedPositionStrategy
+     * Sets the appropriate positions on a position strategy
+     * so the overlay connects with the trigger correctly.
+     * @param positionStrategy Strategy whose position to update.
      */
-    private _getPosition();
+    private _setPosition(positionStrategy);
     /** Cleans up the active subscriptions. */
     private _cleanUpSubscriptions();
     /** Returns a stream that emits whenever an action that should close the menu occurs. */

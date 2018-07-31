@@ -6,10 +6,10 @@
  * found in the LICENSE file at https://angular.io/license
  */
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/cdk/collections'), require('rxjs/operators'), require('@angular/core'), require('rxjs'), require('@angular/cdk/bidi'), require('@angular/cdk/coercion'), require('@angular/cdk/a11y'), require('@angular/common')) :
-	typeof define === 'function' && define.amd ? define('@angular/cdk/tree', ['exports', '@angular/cdk/collections', 'rxjs/operators', '@angular/core', 'rxjs', '@angular/cdk/bidi', '@angular/cdk/coercion', '@angular/cdk/a11y', '@angular/common'], factory) :
-	(factory((global.ng = global.ng || {}, global.ng.cdk = global.ng.cdk || {}, global.ng.cdk.tree = {}),global.ng.cdk.collections,global.rxjs.operators,global.ng.core,global.rxjs,global.ng.cdk.bidi,global.ng.cdk.coercion,global.ng.cdk.a11y,global.ng.common));
-}(this, (function (exports,collections,operators,core,rxjs,bidi,coercion,a11y,common) { 'use strict';
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/cdk/collections'), require('rxjs'), require('rxjs/operators'), require('@angular/core'), require('@angular/cdk/bidi'), require('@angular/cdk/coercion'), require('@angular/cdk/a11y'), require('@angular/common')) :
+	typeof define === 'function' && define.amd ? define('@angular/cdk/tree', ['exports', '@angular/cdk/collections', 'rxjs', 'rxjs/operators', '@angular/core', '@angular/cdk/bidi', '@angular/cdk/coercion', '@angular/cdk/a11y', '@angular/common'], factory) :
+	(factory((global.ng = global.ng || {}, global.ng.cdk = global.ng.cdk || {}, global.ng.cdk.tree = {}),global.ng.cdk.collections,global.rxjs,global.rxjs.operators,global.ng.core,global.ng.cdk.bidi,global.ng.cdk.coercion,global.ng.cdk.a11y,global.ng.common));
+}(this, (function (exports,collections,rxjs,operators,core,bidi,coercion,a11y,common) { 'use strict';
 
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation. All rights reserved.
@@ -27,9 +27,12 @@ and limitations under the License.
 ***************************************************************************** */
 /* global Reflect, Promise */
 
-var extendStatics = Object.setPrototypeOf ||
-    ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-    function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+var extendStatics = function(d, b) {
+    extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return extendStatics(d, b);
+};
 
 function __extends(d, b) {
     extendStatics(d, b);
@@ -345,11 +348,15 @@ NestedTreeControl = /** @class */ (function (_super) {
     function (descendants, dataNode) {
         var _this = this;
         descendants.push(dataNode);
-        this.getChildren(dataNode).pipe(operators.take(1)).subscribe(function (children) {
-            if (children && children.length > 0) {
+        var /** @type {?} */ childrenNodes = this.getChildren(dataNode);
+        if (Array.isArray(childrenNodes)) {
+            childrenNodes.forEach(function (child) { return _this._getDescendants(descendants, child); });
+        }
+        else if (childrenNodes instanceof rxjs.Observable) {
+            childrenNodes.pipe(operators.take(1)).subscribe(function (children) {
                 children.forEach(function (child) { return _this._getDescendants(descendants, child); });
-            }
-        });
+            });
+        }
     };
     return NestedTreeControl;
 }(BaseTreeControl));
@@ -471,133 +478,6 @@ function getTreeControlFunctionsMissingError() {
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
-/**
- * Tree node for CdkTree. It contains the data in the tree node.
- * @template T
- */
-var CdkTreeNode = /** @class */ (function () {
-    function CdkTreeNode(_elementRef, _tree) {
-        this._elementRef = _elementRef;
-        this._tree = _tree;
-        /**
-         * Subject that emits when the component has been destroyed.
-         */
-        this._destroyed = new rxjs.Subject();
-        /**
-         * The role of the node should be 'group' if it's an internal node,
-         * and 'treeitem' if it's a leaf node.
-         */
-        this.role = 'treeitem';
-        CdkTreeNode.mostRecentTreeNode = /** @type {?} */ (this);
-    }
-    Object.defineProperty(CdkTreeNode.prototype, "data", {
-        /** The tree node's data. */
-        get: /**
-         * The tree node's data.
-         * @return {?}
-         */
-        function () { return this._data; },
-        set: /**
-         * @param {?} value
-         * @return {?}
-         */
-        function (value) {
-            this._data = value;
-            this._setRoleFromData();
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(CdkTreeNode.prototype, "isExpanded", {
-        get: /**
-         * @return {?}
-         */
-        function () {
-            return this._tree.treeControl.isExpanded(this._data);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(CdkTreeNode.prototype, "level", {
-        get: /**
-         * @return {?}
-         */
-        function () {
-            return this._tree.treeControl.getLevel ? this._tree.treeControl.getLevel(this._data) : 0;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    /**
-     * @return {?}
-     */
-    CdkTreeNode.prototype.ngOnDestroy = /**
-     * @return {?}
-     */
-    function () {
-        this._destroyed.next();
-        this._destroyed.complete();
-    };
-    /** Focuses the menu item. Implements for FocusableOption. */
-    /**
-     * Focuses the menu item. Implements for FocusableOption.
-     * @return {?}
-     */
-    CdkTreeNode.prototype.focus = /**
-     * Focuses the menu item. Implements for FocusableOption.
-     * @return {?}
-     */
-    function () {
-        this._elementRef.nativeElement.focus();
-    };
-    /**
-     * @return {?}
-     */
-    CdkTreeNode.prototype._setRoleFromData = /**
-     * @return {?}
-     */
-    function () {
-        var _this = this;
-        if (this._tree.treeControl.isExpandable) {
-            this.role = this._tree.treeControl.isExpandable(this._data) ? 'group' : 'treeitem';
-        }
-        else {
-            if (!this._tree.treeControl.getChildren) {
-                throw getTreeControlFunctionsMissingError();
-            }
-            this._tree.treeControl.getChildren(this._data).pipe(operators.takeUntil(this._destroyed))
-                .subscribe(function (children) {
-                _this.role = children && children.length ? 'group' : 'treeitem';
-            });
-        }
-    };
-    /**
-     * The most recently created `CdkTreeNode`. We save it in static variable so we can retrieve it
-     * in `CdkTree` and set the data to it.
-     */
-    CdkTreeNode.mostRecentTreeNode = null;
-    CdkTreeNode.decorators = [
-        { type: core.Directive, args: [{
-                    selector: 'cdk-tree-node',
-                    exportAs: 'cdkTreeNode',
-                    host: {
-                        '[attr.aria-expanded]': 'isExpanded',
-                        '[attr.aria-level]': 'role === "treeitem" ? level : null',
-                        '[attr.role]': 'role',
-                        'class': 'cdk-tree-node',
-                    },
-                },] },
-    ];
-    /** @nocollapse */
-    CdkTreeNode.ctorParameters = function () { return [
-        { type: core.ElementRef, },
-        { type: CdkTree, },
-    ]; };
-    CdkTreeNode.propDecorators = {
-        "role": [{ type: core.Input },],
-    };
-    return CdkTreeNode;
-}());
 /**
  * CDK tree component that connects with a data source to retrieve data of type `T` and renders
  * dataNodes with hierarchy. Updates the dataNodes when new data is provided by the data source.
@@ -896,6 +776,153 @@ var CdkTree = /** @class */ (function () {
     };
     return CdkTree;
 }());
+/**
+ * Tree node for CdkTree. It contains the data in the tree node.
+ * @template T
+ */
+var CdkTreeNode = /** @class */ (function () {
+    function CdkTreeNode(_elementRef, _tree) {
+        this._elementRef = _elementRef;
+        this._tree = _tree;
+        /**
+         * Subject that emits when the component has been destroyed.
+         */
+        this._destroyed = new rxjs.Subject();
+        /**
+         * The role of the node should be 'group' if it's an internal node,
+         * and 'treeitem' if it's a leaf node.
+         */
+        this.role = 'treeitem';
+        CdkTreeNode.mostRecentTreeNode = /** @type {?} */ (this);
+    }
+    Object.defineProperty(CdkTreeNode.prototype, "data", {
+        /** The tree node's data. */
+        get: /**
+         * The tree node's data.
+         * @return {?}
+         */
+        function () { return this._data; },
+        set: /**
+         * @param {?} value
+         * @return {?}
+         */
+        function (value) {
+            this._data = value;
+            this._setRoleFromData();
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(CdkTreeNode.prototype, "isExpanded", {
+        get: /**
+         * @return {?}
+         */
+        function () {
+            return this._tree.treeControl.isExpanded(this._data);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(CdkTreeNode.prototype, "level", {
+        get: /**
+         * @return {?}
+         */
+        function () {
+            return this._tree.treeControl.getLevel ? this._tree.treeControl.getLevel(this._data) : 0;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * @return {?}
+     */
+    CdkTreeNode.prototype.ngOnDestroy = /**
+     * @return {?}
+     */
+    function () {
+        // If this is the last tree node being destroyed,
+        // clear out the reference to avoid leaking memory.
+        if (CdkTreeNode.mostRecentTreeNode === this) {
+            CdkTreeNode.mostRecentTreeNode = null;
+        }
+        this._destroyed.next();
+        this._destroyed.complete();
+    };
+    /** Focuses the menu item. Implements for FocusableOption. */
+    /**
+     * Focuses the menu item. Implements for FocusableOption.
+     * @return {?}
+     */
+    CdkTreeNode.prototype.focus = /**
+     * Focuses the menu item. Implements for FocusableOption.
+     * @return {?}
+     */
+    function () {
+        this._elementRef.nativeElement.focus();
+    };
+    /**
+     * @return {?}
+     */
+    CdkTreeNode.prototype._setRoleFromData = /**
+     * @return {?}
+     */
+    function () {
+        var _this = this;
+        if (this._tree.treeControl.isExpandable) {
+            this.role = this._tree.treeControl.isExpandable(this._data) ? 'group' : 'treeitem';
+        }
+        else {
+            if (!this._tree.treeControl.getChildren) {
+                throw getTreeControlFunctionsMissingError();
+            }
+            var /** @type {?} */ childrenNodes = this._tree.treeControl.getChildren(this._data);
+            if (Array.isArray(childrenNodes)) {
+                this._setRoleFromChildren(/** @type {?} */ (childrenNodes));
+            }
+            else if (childrenNodes instanceof rxjs.Observable) {
+                childrenNodes.pipe(operators.takeUntil(this._destroyed))
+                    .subscribe(function (children) { return _this._setRoleFromChildren(children); });
+            }
+        }
+    };
+    /**
+     * @param {?} children
+     * @return {?}
+     */
+    CdkTreeNode.prototype._setRoleFromChildren = /**
+     * @param {?} children
+     * @return {?}
+     */
+    function (children) {
+        this.role = children && children.length ? 'group' : 'treeitem';
+    };
+    /**
+     * The most recently created `CdkTreeNode`. We save it in static variable so we can retrieve it
+     * in `CdkTree` and set the data to it.
+     */
+    CdkTreeNode.mostRecentTreeNode = null;
+    CdkTreeNode.decorators = [
+        { type: core.Directive, args: [{
+                    selector: 'cdk-tree-node',
+                    exportAs: 'cdkTreeNode',
+                    host: {
+                        '[attr.aria-expanded]': 'isExpanded',
+                        '[attr.aria-level]': 'role === "treeitem" ? level : null',
+                        '[attr.role]': 'role',
+                        'class': 'cdk-tree-node',
+                    },
+                },] },
+    ];
+    /** @nocollapse */
+    CdkTreeNode.ctorParameters = function () { return [
+        { type: core.ElementRef, },
+        { type: CdkTree, },
+    ]; };
+    CdkTreeNode.propDecorators = {
+        "role": [{ type: core.Input },],
+    };
+    return CdkTreeNode;
+}());
 
 /**
  * @fileoverview added by tsickle
@@ -944,11 +971,14 @@ var CdkNestedTreeNode = /** @class */ (function (_super) {
         if (!this._tree.treeControl.getChildren) {
             throw getTreeControlFunctionsMissingError();
         }
-        this._tree.treeControl.getChildren(this.data).pipe(operators.takeUntil(this._destroyed))
-            .subscribe(function (result) {
-            _this._children = result;
-            _this.updateChildrenNodes();
-        });
+        var /** @type {?} */ childrenNodes = this._tree.treeControl.getChildren(this.data);
+        if (Array.isArray(childrenNodes)) {
+            this.updateChildrenNodes(/** @type {?} */ (childrenNodes));
+        }
+        else if (childrenNodes instanceof rxjs.Observable) {
+            childrenNodes.pipe(operators.takeUntil(this._destroyed))
+                .subscribe(function (result) { return _this.updateChildrenNodes(result); });
+        }
         this.nodeOutlet.changes.pipe(operators.takeUntil(this._destroyed))
             .subscribe(function () { return _this.updateChildrenNodes(); });
     };
@@ -965,13 +995,18 @@ var CdkNestedTreeNode = /** @class */ (function (_super) {
     /** Add children dataNodes to the NodeOutlet */
     /**
      * Add children dataNodes to the NodeOutlet
+     * @param {?=} children
      * @return {?}
      */
     CdkNestedTreeNode.prototype.updateChildrenNodes = /**
      * Add children dataNodes to the NodeOutlet
+     * @param {?=} children
      * @return {?}
      */
-    function () {
+    function (children) {
+        if (children) {
+            this._children = children;
+        }
         if (this.nodeOutlet.length && this._children) {
             var /** @type {?} */ viewContainer = this.nodeOutlet.first.viewContainer;
             this._tree.renderNodeChanges(this._children, this._dataDiffer, viewContainer, this._data);
@@ -1234,8 +1269,8 @@ exports.CdkTreeNodeOutletContext = CdkTreeNodeOutletContext;
 exports.CdkTreeNodeDef = CdkTreeNodeDef;
 exports.CdkTreeNodePadding = CdkTreeNodePadding;
 exports.CdkTreeNodeOutlet = CdkTreeNodeOutlet;
-exports.CdkTreeNode = CdkTreeNode;
 exports.CdkTree = CdkTree;
+exports.CdkTreeNode = CdkTreeNode;
 exports.getTreeNoValidDataSourceError = getTreeNoValidDataSourceError;
 exports.getTreeMultipleDefaultNodeDefsError = getTreeMultipleDefaultNodeDefsError;
 exports.getTreeMissingMatchingNodeDefError = getTreeMissingMatchingNodeDefError;

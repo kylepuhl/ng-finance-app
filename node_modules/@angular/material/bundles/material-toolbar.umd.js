@@ -27,9 +27,12 @@ and limitations under the License.
 ***************************************************************************** */
 /* global Reflect, Promise */
 
-var extendStatics = Object.setPrototypeOf ||
-    ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-    function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+var extendStatics = function(d, b) {
+    extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return extendStatics(d, b);
+};
 
 function __extends(d, b) {
     extendStatics(d, b);
@@ -121,8 +124,8 @@ var MatToolbar = /** @class */ (function (_super) {
                     inputs: ['color'],
                     host: {
                         'class': 'mat-toolbar',
-                        '[class.mat-toolbar-multiple-rows]': 'this._toolbarRows.length',
-                        '[class.mat-toolbar-single-row]': '!this._toolbarRows.length'
+                        '[class.mat-toolbar-multiple-rows]': '_toolbarRows.length > 0',
+                        '[class.mat-toolbar-single-row]': '_toolbarRows.length === 0',
                     },
                     changeDetection: core.ChangeDetectionStrategy.OnPush,
                     encapsulation: core.ViewEncapsulation.None,

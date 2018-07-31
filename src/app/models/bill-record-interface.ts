@@ -9,3 +9,4 @@ export interface BillRecordInterface {
     comments: String;
     endBalance: number;
 }
+

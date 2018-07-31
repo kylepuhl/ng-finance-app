@@ -27,9 +27,12 @@ and limitations under the License.
 ***************************************************************************** */
 /* global Reflect, Promise */
 
-var extendStatics = Object.setPrototypeOf ||
-    ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-    function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+var extendStatics = function(d, b) {
+    extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return extendStatics(d, b);
+};
 
 function __extends(d, b) {
     extendStatics(d, b);
@@ -43,7 +46,8 @@ function __extends(d, b) {
  */
 /**
  * Directive to automatically resize a textarea to fit its content.
- * \@deletion-target 7.0.0 deprecate in favor of `cdkTextareaAutosize`.
+ * @deprecated Use `cdkTextareaAutosize` from `\@angular/cdk/text-field` instead.
+ * \@breaking-change 7.0.0
  */
 var MatTextareaAutosize = /** @class */ (function (_super) {
     __extends(MatTextareaAutosize, _super);
@@ -608,7 +612,7 @@ var MatInput = /** @class */ (function (_super) {
                     exportAs: 'matInput',
                     host: {
                         /**
-                             * @deletion-target 7.0.0 remove .mat-form-field-autofill-control in favor of AutofillMonitor.
+                             * @breaking-change 7.0.0 remove .mat-form-field-autofill-control in favor of AutofillMonitor.
                              */
                         'class': 'mat-input-element mat-form-field-autofill-control',
                         '[class.mat-input-server]': '_isServer',

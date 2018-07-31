@@ -1,4 +1,6 @@
 import { Component<% if(!!viewEncapsulation) { %>, ViewEncapsulation<% }%><% if(changeDetection !== 'Default') { %>, ChangeDetectionStrategy<% }%> } from '@angular/core';
+import { map } from 'rxjs/operators';
+import { Breakpoints, BreakpointState, BreakpointObserver } from '@angular/cdk/layout';
 
 @Component({
   selector: '<%= selector %>',<% if(inlineTemplate) { %>
@@ -6,7 +8,7 @@ import { Component<% if(!!viewEncapsulation) { %>, ViewEncapsulation<% }%><% if(
     <div class="grid-container">
       <h1 class="mat-h1">Dashboard</h1>
       <mat-grid-list cols="2" rowHeight="350px">
-        <mat-grid-tile *ngFor="let card of cards" [colspan]="card.cols" [rowspan]="card.rows">
+        <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
           <mat-card class="dashboard-card">
             <mat-card-header>
               <mat-card-title>
@@ -59,10 +61,26 @@ import { Component<% if(!!viewEncapsulation) { %>, ViewEncapsulation<% }%><% if(
   changeDetection: ChangeDetectionStrategy.<%= changeDetection %><% } %>
 })
 export class <%= classify(name) %>Component {
-  cards = [
-    { title: 'Card 1', cols: 2, rows: 1 },
-    { title: 'Card 2', cols: 1, rows: 1 },
-    { title: 'Card 3', cols: 1, rows: 2 },
-    { title: 'Card 4', cols: 1, rows: 1 }
-  ];
+  /** Based on the screen size, switch from standard to one column per row */
+  cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
+    map(({ matches }) => {
+      if (matches) {
+        return [
+          { title: 'Card 1', cols: 1, rows: 1 },
+          { title: 'Card 2', cols: 1, rows: 1 },
+          { title: 'Card 3', cols: 1, rows: 1 },
+          { title: 'Card 4', cols: 1, rows: 1 }
+        ];
+      }
+
+      return [
+        { title: 'Card 1', cols: 2, rows: 1 },
+        { title: 'Card 2', cols: 1, rows: 1 },
+        { title: 'Card 3', cols: 1, rows: 2 },
+        { title: 'Card 4', cols: 1, rows: 1 }
+      ];
+    })
+  );
+
+  constructor(private breakpointObserver: BreakpointObserver) {}
 }

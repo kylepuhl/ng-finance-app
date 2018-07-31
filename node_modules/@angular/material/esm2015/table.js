@@ -5,8 +5,9 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { Attribute, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, IterableDiffers, ViewEncapsulation, Directive, Input, TemplateRef, NgModule } from '@angular/core';
+import { Attribute, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, IterableDiffers, Optional, ViewEncapsulation, Directive, Input, NgModule } from '@angular/core';
 import { CDK_TABLE_TEMPLATE, CdkTable, CdkCell, CdkCellDef, CdkColumnDef, CdkFooterCell, CdkFooterCellDef, CdkHeaderCell, CdkHeaderCellDef, CDK_ROW_TEMPLATE, CdkFooterRow, CdkFooterRowDef, CdkHeaderRow, CdkHeaderRowDef, CdkRow, CdkRowDef, CdkTableModule, DataSource } from '@angular/cdk/table';
+import { Directionality } from '@angular/cdk/bidi';
 import { CommonModule } from '@angular/common';
 import { MatCommonModule } from '@angular/material/core';
 import { _isNumberValue } from '@angular/cdk/coercion';
@@ -27,12 +28,18 @@ class MatTable extends CdkTable {
      * @param {?} _changeDetectorRef
      * @param {?} _elementRef
      * @param {?} role
+     * @param {?} _dir
      */
-    constructor(_differs, _changeDetectorRef, _elementRef, role) {
-        super(_differs, _changeDetectorRef, _elementRef, role);
+    constructor(_differs, _changeDetectorRef, _elementRef, role, _dir) {
+        super(_differs, _changeDetectorRef, _elementRef, role, _dir);
         this._differs = _differs;
         this._changeDetectorRef = _changeDetectorRef;
         this._elementRef = _elementRef;
+        this._dir = _dir;
+        /**
+         * Overrides the sticky CSS class set by the `CdkTable`.
+         */
+        this.stickyCssClass = 'mat-table-sticky';
     }
 }
 MatTable.decorators = [
@@ -53,6 +60,7 @@ MatTable.ctorParameters = () => [
     { type: ChangeDetectorRef, },
     { type: ElementRef, },
     { type: undefined, decorators: [{ type: Attribute, args: ['role',] },] },
+    { type: Directionality, decorators: [{ type: Optional },] },
 ];
 
 /**
@@ -64,13 +72,6 @@ MatTable.ctorParameters = () => [
  * Captures the template of a column's data row cell as well as cell-specific properties.
  */
 class MatCellDef extends CdkCellDef {
-    /**
-     * @param {?} template
-     */
-    constructor(template) {
-        super(template);
-        this.template = template;
-    }
 }
 MatCellDef.decorators = [
     { type: Directive, args: [{
@@ -78,22 +79,11 @@ MatCellDef.decorators = [
                 providers: [{ provide: CdkCellDef, useExisting: MatCellDef }]
             },] },
 ];
-/** @nocollapse */
-MatCellDef.ctorParameters = () => [
-    { type: TemplateRef, },
-];
 /**
  * Header cell definition for the mat-table.
  * Captures the template of a column's header cell and as well as cell-specific properties.
  */
 class MatHeaderCellDef extends CdkHeaderCellDef {
-    /**
-     * @param {?} template
-     */
-    constructor(template) {
-        super(template);
-        this.template = template;
-    }
 }
 MatHeaderCellDef.decorators = [
     { type: Directive, args: [{
@@ -101,32 +91,17 @@ MatHeaderCellDef.decorators = [
                 providers: [{ provide: CdkHeaderCellDef, useExisting: MatHeaderCellDef }]
             },] },
 ];
-/** @nocollapse */
-MatHeaderCellDef.ctorParameters = () => [
-    { type: TemplateRef, },
-];
 /**
  * Footer cell definition for the mat-table.
  * Captures the template of a column's footer cell and as well as cell-specific properties.
  */
 class MatFooterCellDef extends CdkFooterCellDef {
-    /**
-     * @param {?} template
-     */
-    constructor(template) {
-        super(template);
-        this.template = template;
-    }
 }
 MatFooterCellDef.decorators = [
     { type: Directive, args: [{
                 selector: '[matFooterCellDef]',
                 providers: [{ provide: CdkFooterCellDef, useExisting: MatFooterCellDef }]
             },] },
-];
-/** @nocollapse */
-MatFooterCellDef.ctorParameters = () => [
-    { type: TemplateRef, },
 ];
 /**
  * Column definition for the mat-table.
@@ -143,6 +118,8 @@ MatColumnDef.decorators = [
 /** @nocollapse */
 MatColumnDef.propDecorators = {
     "name": [{ type: Input, args: ['matColumnDef',] },],
+    "sticky": [{ type: Input },],
+    "stickyEnd": [{ type: Input },],
 };
 /**
  * Header cell template container that adds the right classes and role.
@@ -235,50 +212,26 @@ MatCell.ctorParameters = () => [
  * Captures the header row's template and other header properties such as the columns to display.
  */
 class MatHeaderRowDef extends CdkHeaderRowDef {
-    /**
-     * @param {?} template
-     * @param {?} _differs
-     */
-    constructor(template, _differs) {
-        super(template, _differs);
-    }
 }
 MatHeaderRowDef.decorators = [
     { type: Directive, args: [{
                 selector: '[matHeaderRowDef]',
                 providers: [{ provide: CdkHeaderRowDef, useExisting: MatHeaderRowDef }],
-                inputs: ['columns: matHeaderRowDef'],
+                inputs: ['columns: matHeaderRowDef', 'sticky: matHeaderRowDefSticky'],
             },] },
-];
-/** @nocollapse */
-MatHeaderRowDef.ctorParameters = () => [
-    { type: TemplateRef, },
-    { type: IterableDiffers, },
 ];
 /**
  * Footer row definition for the mat-table.
  * Captures the footer row's template and other footer properties such as the columns to display.
  */
 class MatFooterRowDef extends CdkFooterRowDef {
-    /**
-     * @param {?} template
-     * @param {?} _differs
-     */
-    constructor(template, _differs) {
-        super(template, _differs);
-    }
 }
 MatFooterRowDef.decorators = [
     { type: Directive, args: [{
                 selector: '[matFooterRowDef]',
                 providers: [{ provide: CdkFooterRowDef, useExisting: MatFooterRowDef }],
-                inputs: ['columns: matFooterRowDef'],
+                inputs: ['columns: matFooterRowDef', 'sticky: matFooterRowDefSticky'],
             },] },
-];
-/** @nocollapse */
-MatFooterRowDef.ctorParameters = () => [
-    { type: TemplateRef, },
-    { type: IterableDiffers, },
 ];
 /**
  * Data row definition for the mat-table.
@@ -287,13 +240,6 @@ MatFooterRowDef.ctorParameters = () => [
  * @template T
  */
 class MatRowDef extends CdkRowDef {
-    /**
-     * @param {?} template
-     * @param {?} _differs
-     */
-    constructor(template, _differs) {
-        super(template, _differs);
-    }
 }
 MatRowDef.decorators = [
     { type: Directive, args: [{
@@ -301,11 +247,6 @@ MatRowDef.decorators = [
                 providers: [{ provide: CdkRowDef, useExisting: MatRowDef }],
                 inputs: ['columns: matRowDefColumns', 'when: matRowDefWhen'],
             },] },
-];
-/** @nocollapse */
-MatRowDef.ctorParameters = () => [
-    { type: TemplateRef, },
-    { type: IterableDiffers, },
 ];
 /**
  * Footer template container that contains the cell outlet. Adds the right class and role.
@@ -322,6 +263,7 @@ MatHeaderRow.decorators = [
                 changeDetection: ChangeDetectionStrategy.OnPush,
                 encapsulation: ViewEncapsulation.None,
                 exportAs: 'matHeaderRow',
+                providers: [{ provide: CdkHeaderRow, useExisting: MatHeaderRow }],
             },] },
 ];
 /**
@@ -339,6 +281,7 @@ MatFooterRow.decorators = [
                 changeDetection: ChangeDetectionStrategy.OnPush,
                 encapsulation: ViewEncapsulation.None,
                 exportAs: 'matFooterRow',
+                providers: [{ provide: CdkFooterRow, useExisting: MatFooterRow }],
             },] },
 ];
 /**
@@ -356,6 +299,7 @@ MatRow.decorators = [
                 changeDetection: ChangeDetectionStrategy.OnPush,
                 encapsulation: ViewEncapsulation.None,
                 exportAs: 'matRow',
+                providers: [{ provide: CdkRow, useExisting: MatRow }],
             },] },
 ];
 
@@ -393,6 +337,11 @@ MatTableModule.decorators = [
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
+/**
+ * Corresponds to `Number.MAX_SAFE_INTEGER`. Moved out into a variable here due to
+ * flaky browser support and the value not being defined in Closure's typings.
+ */
+const /** @type {?} */ MAX_SAFE_INTEGER = 9007199254740991;
 /**
  * Data source that accepts a client-side data array and includes native support of filtering,
  * sorting (using MatSort), and pagination (using MatPaginator).
@@ -432,7 +381,13 @@ class MatTableDataSource extends DataSource {
          */
         this.sortingDataAccessor = (data, sortHeaderId) => {
             const /** @type {?} */ value = data[sortHeaderId];
-            return _isNumberValue(value) ? Number(value) : value;
+            if (_isNumberValue(value)) {
+                const /** @type {?} */ numberValue = Number(value);
+                // Numbers beyond `MAX_SAFE_INTEGER` can't be compared reliably so we
+                // leave them as strings. For more info: https://goo.gl/y5vbSg
+                return numberValue < MAX_SAFE_INTEGER ? numberValue : value;
+            }
+            return value;
         };
         /**
          * Gets a sorted copy of the data array based on the state of the MatSort. Called

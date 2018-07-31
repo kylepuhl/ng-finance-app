@@ -12,12 +12,14 @@ import { ConnectedPositionStrategy } from './connected-position-strategy';
 import { FlexibleConnectedPositionStrategy } from './flexible-connected-position-strategy';
 import { GlobalPositionStrategy } from './global-position-strategy';
 import { Platform } from '@angular/cdk/platform';
+import { OverlayContainer } from '../overlay-container';
 /** Builder for overlay position strategy. */
 export declare class OverlayPositionBuilder {
     private _viewportRuler;
     private _document;
     private _platform;
-    constructor(_viewportRuler: ViewportRuler, _document: any, _platform?: Platform | undefined);
+    private _overlayContainer;
+    constructor(_viewportRuler: ViewportRuler, _document: any, _platform?: Platform | undefined, _overlayContainer?: OverlayContainer | undefined);
     /**
      * Creates a global position strategy.
      */
@@ -28,7 +30,7 @@ export declare class OverlayPositionBuilder {
      * @param originPos
      * @param overlayPos
      * @deprecated Use `flexibleConnectedTo` instead.
-     * @deletion-target 7.0.0
+     * @breaking-change 7.0.0
      */
     connectedTo(elementRef: ElementRef, originPos: OriginConnectionPosition, overlayPos: OverlayConnectionPosition): ConnectedPositionStrategy;
     /**

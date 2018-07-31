@@ -48,10 +48,11 @@ export declare class ListKeyManager<T extends ListKeyManagerOption> {
      */
     skipPredicate(predicate: (item: T) => boolean): this;
     /**
-     * Turns on wrapping mode, which ensures that the active item will wrap to
+     * Configures wrapping mode, which determines whether the active item will wrap to
      * the other end of list when there are no more items in the given direction.
+     * @param shouldWrap Whether the list should wrap when reaching the end.
      */
-    withWrap(): this;
+    withWrap(shouldWrap?: boolean): this;
     /**
      * Configures whether the key manager should be able to move the selection vertically.
      * @param enabled Whether vertical selection should be enabled.
@@ -109,7 +110,7 @@ export declare class ListKeyManager<T extends ListKeyManagerOption> {
      * Allows setting of the activeItemIndex without any other effects.
      * @param index The new activeItemIndex.
      * @deprecated Use `updateActiveItem` instead.
-     * @deletion-target 7.0.0
+     * @breaking-change 7.0.0
      */
     updateActiveItemIndex(index: number): void;
     /**

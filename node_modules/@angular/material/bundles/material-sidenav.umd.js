@@ -27,9 +27,12 @@ and limitations under the License.
 ***************************************************************************** */
 /* global Reflect, Promise */
 
-var extendStatics = Object.setPrototypeOf ||
-    ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-    function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+var extendStatics = function(d, b) {
+    extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return extendStatics(d, b);
+};
 
 function __extends(d, b) {
     extendStatics(d, b);
@@ -988,6 +991,12 @@ var MatDrawerContainer = /** @class */ (function () {
                 left -= width;
             }
         }
+        // If either `right` or `left` is zero, don't set a style to the element. This
+        // allows users to specify a custom size via CSS class in SSR scenarios where the
+        // measured widths will always be zero. Note that we reset to `null` here, rather
+        // than below, in order to ensure that the types in the `if` below are consistent.
+        left = left || /** @type {?} */ ((null));
+        right = right || /** @type {?} */ ((null));
         if (left !== this._contentMargins.left || right !== this._contentMargins.right) {
             this._contentMargins = { left: left, right: right };
             // Pull back into the NgZone since in some cases we could be outside. We need to be careful

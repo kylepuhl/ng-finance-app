@@ -1,16 +1,25 @@
-<nav class="navbar">
+<mat-toolbar class="navbar">
+
+
     <mat-icon>credit_card</mat-icon>
-    <a class="navbar-heading">
-        Finance App
+
+    <a class="navbar-heading" routerLink="/bills">
+        Puhl's Finance App
     </a>
 
-</nav>
+    <span class="fill-space"></span>
 
-<!--
-<mat-icon iconName=""></mat-icon>
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="menu-button">
+        <mat-icon>menu</mat-icon>
+    </button>
 
-<img src="../../../assets/money-bill-alt.svg" alt="">
-<div class="div">
-    <i class="fa fa-money-bill-alt fa-5x"></i>
-</div>
--->
+    <mat-menu #menu="matMenu">
+
+        <button mat-menu-item routerLink="/payment-history" >
+            <mat-icon>list</mat-icon>
+            <span>Payment History</span>
+        </button>
+
+    </mat-menu>
+
+</mat-toolbar>

@@ -6,7 +6,7 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import { PositionStrategy } from './position-strategy';
-import { OverlayRef } from '../overlay-ref';
+import { OverlayReference } from '../overlay-reference';
 /**
  * A strategy for positioning overlays. Using this strategy, an overlay is given an
  * explicit position relative to the browser's viewport. We use flexbox, instead of
@@ -25,7 +25,7 @@ export declare class GlobalPositionStrategy implements PositionStrategy {
     private _justifyContent;
     private _width;
     private _height;
-    attach(overlayRef: OverlayRef): void;
+    attach(overlayRef: OverlayReference): void;
     /**
      * Sets the top position of the overlay. Clears any previously set vertical position.
      * @param value New top offset.
@@ -50,14 +50,14 @@ export declare class GlobalPositionStrategy implements PositionStrategy {
      * Sets the overlay width and clears any previously set width.
      * @param value New width for the overlay
      * @deprecated Pass the `width` through the `OverlayConfig`.
-     * @deletion-target 7.0.0
+     * @breaking-change 7.0.0
      */
     width(value?: string): this;
     /**
      * Sets the overlay height and clears any previously set height.
      * @param value New height for the overlay
      * @deprecated Pass the `height` through the `OverlayConfig`.
-     * @deletion-target 7.0.0
+     * @breaking-change 7.0.0
      */
     height(value?: string): this;
     /**

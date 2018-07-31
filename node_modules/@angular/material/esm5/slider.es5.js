@@ -79,7 +79,7 @@ var /** @type {?} */ _MatSliderMixinBase = mixinTabIndex(mixinColor(mixinDisable
 var MatSlider = /** @class */ (function (_super) {
     __extends(MatSlider, _super);
     function MatSlider(elementRef, _focusMonitor, _changeDetectorRef, _dir, tabIndex, 
-    // @deletion-target 7.0.0 `_animationMode` parameter to be made required.
+    // @breaking-change 7.0.0 `_animationMode` parameter to be made required.
     _animationMode) {
         var _this = _super.call(this, elementRef) || this;
         _this._focusMonitor = _focusMonitor;
@@ -102,6 +102,12 @@ var MatSlider = /** @class */ (function (_super) {
          * Event emitted when the slider thumb moves.
          */
         _this.input = new EventEmitter();
+        /**
+         * Emits when the raw value of the slider changes. This is here primarily
+         * to facilitate the two-way binding for the `value` input.
+         * \@docs-private
+         */
+        _this.valueChange = new EventEmitter();
         /**
          * onTouch function registered via registerOnTouch (ControlValueAccessor).
          */
@@ -269,7 +275,13 @@ var MatSlider = /** @class */ (function (_super) {
          */
         function (v) {
             if (v !== this._value) {
-                this._value = coerceNumberProperty(v);
+                var /** @type {?} */ value = coerceNumberProperty(v);
+                // While incrementing by a decimal we can end up with values like 33.300000000000004.
+                // Truncate it to ensure that it matches the label and to make it easier to work with.
+                if (this._roundToDecimal) {
+                    value = parseFloat(value.toFixed(this._roundToDecimal));
+                }
+                this._value = value;
                 this._percent = this._calculatePercentage(this._value);
                 // Since this also modifies the percentage, we need to let the change detection know.
                 this._changeDetectorRef.markForCheck();
@@ -409,9 +421,11 @@ var MatSlider = /** @class */ (function (_super) {
          */
         function () {
             var /** @type {?} */ axis = this.vertical ? 'Y' : 'X';
+            var /** @type {?} */ scale = this.vertical ? "1, " + (1 - this.percent) + ", 1" : 1 - this.percent + ", 1, 1";
             var /** @type {?} */ sign = this._invertMouseCoords ? '-' : '';
             return {
-                'transform': "translate" + axis + "(" + sign + this._thumbGap + "px) scale" + axis + "(" + (1 - this.percent) + ")"
+                // scale3d avoids some rendering issues in Chrome. See #12071.
+                transform: "translate" + axis + "(" + sign + this._thumbGap + "px) scale3d(" + scale + ")"
             };
         },
         enumerable: true,
@@ -425,9 +439,11 @@ var MatSlider = /** @class */ (function (_super) {
          */
         function () {
             var /** @type {?} */ axis = this.vertical ? 'Y' : 'X';
+            var /** @type {?} */ scale = this.vertical ? "1, " + this.percent + ", 1" : this.percent + ", 1, 1";
             var /** @type {?} */ sign = this._invertMouseCoords ? '' : '-';
             return {
-                'transform': "translate" + axis + "(" + sign + this._thumbGap + "px) scale" + axis + "(" + this.percent + ")"
+                // scale3d avoids some rendering issues in Chrome. See #12071.
+                transform: "translate" + axis + "(" + sign + this._thumbGap + "px) scale3d(" + scale + ")"
             };
         },
         enumerable: true,
@@ -789,11 +805,6 @@ var MatSlider = /** @class */ (function (_super) {
             // This calculation finds the closest step by finding the closest
             // whole number divisible by the step relative to the min.
             var /** @type {?} */ closestValue = Math.round((exactValue - this.min) / this.step) * this.step + this.min;
-            // If we've got a step with a decimal, we may end up with something like 33.300000000000004.
-            // Truncate the value to ensure that it matches the label and to make it easier to work with.
-            if (this._roundToDecimal) {
-                closestValue = parseFloat(closestValue.toFixed(this._roundToDecimal));
-            }
             // The value needs to snap to the min and max.
             this.value = this._clamp(closestValue, this.min, this.max);
         }
@@ -808,6 +819,7 @@ var MatSlider = /** @class */ (function (_super) {
      */
     function () {
         this._controlValueAccessorChangeFn(this.value);
+        this.valueChange.emit(this.value);
         this.change.emit(this._createChangeEvent());
     };
     /**
@@ -963,18 +975,18 @@ var MatSlider = /** @class */ (function (_super) {
         this.value = value;
     };
     /**
-     * Registers a callback to eb triggered when the value has changed.
+     * Registers a callback to be triggered when the value has changed.
      * Implemented as part of ControlValueAccessor.
      * @param fn Callback to be registered.
      */
     /**
-     * Registers a callback to eb triggered when the value has changed.
+     * Registers a callback to be triggered when the value has changed.
      * Implemented as part of ControlValueAccessor.
      * @param {?} fn Callback to be registered.
      * @return {?}
      */
     MatSlider.prototype.registerOnChange = /**
-     * Registers a callback to eb triggered when the value has changed.
+     * Registers a callback to be triggered when the value has changed.
      * Implemented as part of ControlValueAccessor.
      * @param {?} fn Callback to be registered.
      * @return {?}
@@ -1083,6 +1095,7 @@ var MatSlider = /** @class */ (function (_super) {
         "vertical": [{ type: Input },],
         "change": [{ type: Output },],
         "input": [{ type: Output },],
+        "valueChange": [{ type: Output },],
         "_sliderWrapper": [{ type: ViewChild, args: ['sliderWrapper',] },],
     };
     return MatSlider;

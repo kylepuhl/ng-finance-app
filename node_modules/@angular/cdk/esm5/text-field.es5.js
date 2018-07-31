@@ -46,6 +46,7 @@ var AutofillMonitor = /** @class */ (function () {
      * @return {?} A stream of autofill state changes.
      */
     function (element) {
+        var _this = this;
         if (!this._platform.isBrowser) {
             return EMPTY;
         }
@@ -54,14 +55,20 @@ var AutofillMonitor = /** @class */ (function () {
             return info.subject.asObservable();
         }
         var /** @type {?} */ result = new Subject();
+        var /** @type {?} */ cssClass = 'cdk-text-field-autofilled';
         var /** @type {?} */ listener = function (event) {
-            if (event.animationName === 'cdk-text-field-autofill-start') {
-                element.classList.add('cdk-text-field-autofilled');
-                result.next({ target: /** @type {?} */ (event.target), isAutofilled: true });
+            // Animation events fire on initial element render, we check for the presence of the autofill
+            // CSS class to make sure this is a real change in state, not just the initial render before
+            // we fire off events.
+            if (event.animationName === 'cdk-text-field-autofill-start' &&
+                !element.classList.contains(cssClass)) {
+                element.classList.add(cssClass);
+                _this._ngZone.run(function () { return result.next({ target: /** @type {?} */ (event.target), isAutofilled: true }); });
             }
-            else if (event.animationName === 'cdk-text-field-autofill-end') {
-                element.classList.remove('cdk-text-field-autofilled');
-                result.next({ target: /** @type {?} */ (event.target), isAutofilled: false });
+            else if (event.animationName === 'cdk-text-field-autofill-end' &&
+                element.classList.contains(cssClass)) {
+                element.classList.remove(cssClass);
+                _this._ngZone.run(function () { return result.next({ target: /** @type {?} */ (event.target), isAutofilled: false }); });
             }
         };
         this._ngZone.runOutsideAngular(function () {

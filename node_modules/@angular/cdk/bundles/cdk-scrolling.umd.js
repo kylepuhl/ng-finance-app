@@ -268,7 +268,7 @@ var ScrollDispatcher = /** @class */ (function () {
     return ScrollDispatcher;
 }());
 /**
- * \@docs-private \@deprecated \@deletion-target 7.0.0
+ * \@docs-private \@deprecated \@breaking-change 7.0.0
  * @param {?} parentDispatcher
  * @param {?} ngZone
  * @param {?} platform
@@ -278,7 +278,7 @@ function SCROLL_DISPATCHER_PROVIDER_FACTORY(parentDispatcher, ngZone, platform$$
     return parentDispatcher || new ScrollDispatcher(ngZone, platform$$1);
 }
 /**
- * \@docs-private \@deprecated \@deletion-target 7.0.0
+ * \@docs-private \@deprecated \@breaking-change 7.0.0
  */
 var /** @type {?} */ SCROLL_DISPATCHER_PROVIDER = {
     // If there is already a ScrollDispatcher available, use that. Otherwise, provide a new one.
@@ -329,6 +329,7 @@ var CdkScrollable = /** @class */ (function () {
         if (this._scrollListener) {
             this.getElementRef().nativeElement.removeEventListener('scroll', this._scrollListener);
         }
+        this._elementScrolled.complete();
     };
     /**
      * Returns observable that emits when a scroll event is fired on the host element.
@@ -518,7 +519,7 @@ var ViewportRuler = /** @class */ (function () {
     return ViewportRuler;
 }());
 /**
- * \@docs-private \@deprecated \@deletion-target 7.0.0
+ * \@docs-private \@deprecated \@breaking-change 7.0.0
  * @param {?} parentRuler
  * @param {?} platform
  * @param {?} ngZone
@@ -528,7 +529,7 @@ function VIEWPORT_RULER_PROVIDER_FACTORY(parentRuler, platform$$1, ngZone) {
     return parentRuler || new ViewportRuler(platform$$1, ngZone);
 }
 /**
- * \@docs-private \@deprecated \@deletion-target 7.0.0
+ * \@docs-private \@deprecated \@breaking-change 7.0.0
  */
 var /** @type {?} */ VIEWPORT_RULER_PROVIDER = {
     // If there is already a ViewportRuler available, use that. Otherwise, provide a new one.

@@ -6,10 +6,10 @@
  * found in the LICENSE file at https://angular.io/license
  */
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/cdk/table'), require('@angular/common'), require('@angular/material/core'), require('@angular/cdk/coercion'), require('rxjs'), require('rxjs/operators')) :
-	typeof define === 'function' && define.amd ? define('@angular/material/table', ['exports', '@angular/core', '@angular/cdk/table', '@angular/common', '@angular/material/core', '@angular/cdk/coercion', 'rxjs', 'rxjs/operators'], factory) :
-	(factory((global.ng = global.ng || {}, global.ng.material = global.ng.material || {}, global.ng.material.table = {}),global.ng.core,global.ng.cdk.table,global.ng.common,global.ng.material.core,global.ng.cdk.coercion,global.rxjs,global.rxjs.operators));
-}(this, (function (exports,core,table,common,core$1,coercion,rxjs,operators) { 'use strict';
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/cdk/table'), require('@angular/cdk/bidi'), require('@angular/common'), require('@angular/material/core'), require('@angular/cdk/coercion'), require('rxjs'), require('rxjs/operators')) :
+	typeof define === 'function' && define.amd ? define('@angular/material/table', ['exports', '@angular/core', '@angular/cdk/table', '@angular/cdk/bidi', '@angular/common', '@angular/material/core', '@angular/cdk/coercion', 'rxjs', 'rxjs/operators'], factory) :
+	(factory((global.ng = global.ng || {}, global.ng.material = global.ng.material || {}, global.ng.material.table = {}),global.ng.core,global.ng.cdk.table,global.ng.cdk.bidi,global.ng.common,global.ng.material.core,global.ng.cdk.coercion,global.rxjs,global.rxjs.operators));
+}(this, (function (exports,core,table,bidi,common,core$1,coercion,rxjs,operators) { 'use strict';
 
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation. All rights reserved.
@@ -27,9 +27,12 @@ and limitations under the License.
 ***************************************************************************** */
 /* global Reflect, Promise */
 
-var extendStatics = Object.setPrototypeOf ||
-    ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-    function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+var extendStatics = function(d, b) {
+    extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return extendStatics(d, b);
+};
 
 function __extends(d, b) {
     extendStatics(d, b);
@@ -52,11 +55,16 @@ var MatTable = /** @class */ (function (_super) {
     // fixed bug.
     // https://github.com/angular/tsickle/pull/760 - tsickle PR that fixed this
     // https://github.com/angular/angular/pull/23531 - updates compiler-cli to fixed version
-    function MatTable(_differs, _changeDetectorRef, _elementRef, role) {
-        var _this = _super.call(this, _differs, _changeDetectorRef, _elementRef, role) || this;
+    function MatTable(_differs, _changeDetectorRef, _elementRef, role, _dir) {
+        var _this = _super.call(this, _differs, _changeDetectorRef, _elementRef, role, _dir) || this;
         _this._differs = _differs;
         _this._changeDetectorRef = _changeDetectorRef;
         _this._elementRef = _elementRef;
+        _this._dir = _dir;
+        /**
+         * Overrides the sticky CSS class set by the `CdkTable`.
+         */
+        _this.stickyCssClass = 'mat-table-sticky';
         return _this;
     }
     MatTable.decorators = [
@@ -77,6 +85,7 @@ var MatTable = /** @class */ (function (_super) {
         { type: core.ChangeDetectorRef, },
         { type: core.ElementRef, },
         { type: undefined, decorators: [{ type: core.Attribute, args: ['role',] },] },
+        { type: bidi.Directionality, decorators: [{ type: core.Optional },] },
     ]; };
     return MatTable;
 }(table.CdkTable));
@@ -91,11 +100,8 @@ var MatTable = /** @class */ (function (_super) {
  */
 var MatCellDef = /** @class */ (function (_super) {
     __extends(MatCellDef, _super);
-    // TODO(andrewseguin): Remove this constructor after compiler-cli is updated; see issue #9329
-    function MatCellDef(template) {
-        var _this = _super.call(this, template) || this;
-        _this.template = template;
-        return _this;
+    function MatCellDef() {
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     MatCellDef.decorators = [
         { type: core.Directive, args: [{
@@ -103,10 +109,6 @@ var MatCellDef = /** @class */ (function (_super) {
                     providers: [{ provide: table.CdkCellDef, useExisting: MatCellDef }]
                 },] },
     ];
-    /** @nocollapse */
-    MatCellDef.ctorParameters = function () { return [
-        { type: core.TemplateRef, },
-    ]; };
     return MatCellDef;
 }(table.CdkCellDef));
 /**
@@ -115,11 +117,8 @@ var MatCellDef = /** @class */ (function (_super) {
  */
 var MatHeaderCellDef = /** @class */ (function (_super) {
     __extends(MatHeaderCellDef, _super);
-    // TODO(andrewseguin): Remove this constructor after compiler-cli is updated; see issue #9329
-    function MatHeaderCellDef(template) {
-        var _this = _super.call(this, template) || this;
-        _this.template = template;
-        return _this;
+    function MatHeaderCellDef() {
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     MatHeaderCellDef.decorators = [
         { type: core.Directive, args: [{
@@ -127,10 +126,6 @@ var MatHeaderCellDef = /** @class */ (function (_super) {
                     providers: [{ provide: table.CdkHeaderCellDef, useExisting: MatHeaderCellDef }]
                 },] },
     ];
-    /** @nocollapse */
-    MatHeaderCellDef.ctorParameters = function () { return [
-        { type: core.TemplateRef, },
-    ]; };
     return MatHeaderCellDef;
 }(table.CdkHeaderCellDef));
 /**
@@ -139,11 +134,8 @@ var MatHeaderCellDef = /** @class */ (function (_super) {
  */
 var MatFooterCellDef = /** @class */ (function (_super) {
     __extends(MatFooterCellDef, _super);
-    // TODO(andrewseguin): Remove this constructor after compiler-cli is updated; see issue #9329
-    function MatFooterCellDef(template) {
-        var _this = _super.call(this, template) || this;
-        _this.template = template;
-        return _this;
+    function MatFooterCellDef() {
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     MatFooterCellDef.decorators = [
         { type: core.Directive, args: [{
@@ -151,10 +143,6 @@ var MatFooterCellDef = /** @class */ (function (_super) {
                     providers: [{ provide: table.CdkFooterCellDef, useExisting: MatFooterCellDef }]
                 },] },
     ];
-    /** @nocollapse */
-    MatFooterCellDef.ctorParameters = function () { return [
-        { type: core.TemplateRef, },
-    ]; };
     return MatFooterCellDef;
 }(table.CdkFooterCellDef));
 /**
@@ -175,6 +163,8 @@ var MatColumnDef = /** @class */ (function (_super) {
     /** @nocollapse */
     MatColumnDef.propDecorators = {
         "name": [{ type: core.Input, args: ['matColumnDef',] },],
+        "sticky": [{ type: core.Input },],
+        "stickyEnd": [{ type: core.Input },],
     };
     return MatColumnDef;
 }(table.CdkColumnDef));
@@ -267,22 +257,16 @@ var MatCell = /** @class */ (function (_super) {
  */
 var MatHeaderRowDef = /** @class */ (function (_super) {
     __extends(MatHeaderRowDef, _super);
-    // TODO(andrewseguin): Remove this constructor after compiler-cli is updated; see issue #9329
-    function MatHeaderRowDef(template, _differs) {
-        return _super.call(this, template, _differs) || this;
+    function MatHeaderRowDef() {
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     MatHeaderRowDef.decorators = [
         { type: core.Directive, args: [{
                     selector: '[matHeaderRowDef]',
                     providers: [{ provide: table.CdkHeaderRowDef, useExisting: MatHeaderRowDef }],
-                    inputs: ['columns: matHeaderRowDef'],
+                    inputs: ['columns: matHeaderRowDef', 'sticky: matHeaderRowDefSticky'],
                 },] },
     ];
-    /** @nocollapse */
-    MatHeaderRowDef.ctorParameters = function () { return [
-        { type: core.TemplateRef, },
-        { type: core.IterableDiffers, },
-    ]; };
     return MatHeaderRowDef;
 }(table.CdkHeaderRowDef));
 /**
@@ -291,22 +275,16 @@ var MatHeaderRowDef = /** @class */ (function (_super) {
  */
 var MatFooterRowDef = /** @class */ (function (_super) {
     __extends(MatFooterRowDef, _super);
-    // TODO(andrewseguin): Remove this constructor after compiler-cli is updated; see issue #9329
-    function MatFooterRowDef(template, _differs) {
-        return _super.call(this, template, _differs) || this;
+    function MatFooterRowDef() {
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     MatFooterRowDef.decorators = [
         { type: core.Directive, args: [{
                     selector: '[matFooterRowDef]',
                     providers: [{ provide: table.CdkFooterRowDef, useExisting: MatFooterRowDef }],
-                    inputs: ['columns: matFooterRowDef'],
+                    inputs: ['columns: matFooterRowDef', 'sticky: matFooterRowDefSticky'],
                 },] },
     ];
-    /** @nocollapse */
-    MatFooterRowDef.ctorParameters = function () { return [
-        { type: core.TemplateRef, },
-        { type: core.IterableDiffers, },
-    ]; };
     return MatFooterRowDef;
 }(table.CdkFooterRowDef));
 /**
@@ -317,9 +295,8 @@ var MatFooterRowDef = /** @class */ (function (_super) {
  */
 var MatRowDef = /** @class */ (function (_super) {
     __extends(MatRowDef, _super);
-    // TODO(andrewseguin): Remove this constructor after compiler-cli is updated; see issue #9329
-    function MatRowDef(template, _differs) {
-        return _super.call(this, template, _differs) || this;
+    function MatRowDef() {
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     MatRowDef.decorators = [
         { type: core.Directive, args: [{
@@ -328,11 +305,6 @@ var MatRowDef = /** @class */ (function (_super) {
                     inputs: ['columns: matRowDefColumns', 'when: matRowDefWhen'],
                 },] },
     ];
-    /** @nocollapse */
-    MatRowDef.ctorParameters = function () { return [
-        { type: core.TemplateRef, },
-        { type: core.IterableDiffers, },
-    ]; };
     return MatRowDef;
 }(table.CdkRowDef));
 /**
@@ -353,6 +325,7 @@ var MatHeaderRow = /** @class */ (function (_super) {
                     changeDetection: core.ChangeDetectionStrategy.OnPush,
                     encapsulation: core.ViewEncapsulation.None,
                     exportAs: 'matHeaderRow',
+                    providers: [{ provide: table.CdkHeaderRow, useExisting: MatHeaderRow }],
                 },] },
     ];
     return MatHeaderRow;
@@ -375,6 +348,7 @@ var MatFooterRow = /** @class */ (function (_super) {
                     changeDetection: core.ChangeDetectionStrategy.OnPush,
                     encapsulation: core.ViewEncapsulation.None,
                     exportAs: 'matFooterRow',
+                    providers: [{ provide: table.CdkFooterRow, useExisting: MatFooterRow }],
                 },] },
     ];
     return MatFooterRow;
@@ -397,6 +371,7 @@ var MatRow = /** @class */ (function (_super) {
                     changeDetection: core.ChangeDetectionStrategy.OnPush,
                     encapsulation: core.ViewEncapsulation.None,
                     exportAs: 'matRow',
+                    providers: [{ provide: table.CdkRow, useExisting: MatRow }],
                 },] },
     ];
     return MatRow;
@@ -439,6 +414,11 @@ var MatTableModule = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
+/**
+ * Corresponds to `Number.MAX_SAFE_INTEGER`. Moved out into a variable here due to
+ * flaky browser support and the value not being defined in Closure's typings.
+ */
+var /** @type {?} */ MAX_SAFE_INTEGER = 9007199254740991;
 /**
  * Data source that accepts a client-side data array and includes native support of filtering,
  * sorting (using MatSort), and pagination (using MatPaginator).
@@ -486,7 +466,13 @@ MatTableDataSource = /** @class */ (function (_super) {
          */
         _this.sortingDataAccessor = function (data, sortHeaderId) {
             var /** @type {?} */ value = data[sortHeaderId];
-            return coercion._isNumberValue(value) ? Number(value) : value;
+            if (coercion._isNumberValue(value)) {
+                var /** @type {?} */ numberValue = Number(value);
+                // Numbers beyond `MAX_SAFE_INTEGER` can't be compared reliably so we
+                // leave them as strings. For more info: https://goo.gl/y5vbSg
+                return numberValue < MAX_SAFE_INTEGER ? numberValue : value;
+            }
+            return value;
         };
         /**
          * Gets a sorted copy of the data array based on the state of the MatSort. Called
