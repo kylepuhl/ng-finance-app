@@ -1,0 +1,39 @@
+<h2 mat-dialog-title>Add a new bill:</h2>
+
+<mat-dialog-content [formGroup]="form">
+    <mat-form-field>
+        <input matInput
+               placeholder="Bill Name"
+               formControlName="billName">
+
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput
+               placeholder="Minimum Payment"
+               formControlName="minPayment">
+
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput [matDatepicker]="dueDatePicker" formControlName="dueDate"  placeholder="Next Due Date">
+
+        <mat-datepicker-toggle matSuffix [for]="dueDatePicker"></mat-datepicker-toggle>
+        <mat-datepicker #dueDatePicker></mat-datepicker>
+
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput [matDatepicker]="lastPaidDatePicker" formControlName="lastPaid" placeholder="Last Paid Date">
+
+        <mat-datepicker-toggle matSuffix [for]="lastPaidDatePicker"></mat-datepicker-toggle>
+        <mat-datepicker #lastPaidDatePicker></mat-datepicker>
+
+    </mat-form-field>
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button class="mat-raised-button"(click)="close()">Close</button>
+    <button class="mat-raised-button mat-primary"(click)="save()">Save</button>
+</mat-dialog-actions>
