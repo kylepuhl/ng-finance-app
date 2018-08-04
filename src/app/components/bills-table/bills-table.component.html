@@ -1,77 +1,61 @@
-<div class="container">
+<div>
     <h4 class="table-header">Bill Tracker</h4>
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <div>
+        <button (click)="addBill()" mat-mini-fab class="add-button">
+            <mat-icon>add</mat-icon>
+        </button>
+    </div>
+
+    <mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
 
         <!-- billName Column -->
         <ng-container matColumnDef="billName">
-            <th mat-header-cell *matHeaderCellDef> Bill Name </th>
-            <td mat-cell *matCellDef="let bill"> {{bill.billName}} </td>
+            <mat-header-cell *matHeaderCellDef  mat-sort-header> Bill Name</mat-header-cell>
+            <mat-cell *matCellDef="let bill"> {{bill.billName}}</mat-cell>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="minPayment">
+            <mat-header-cell *matHeaderCellDef  mat-sort-header> Minimum Due</mat-header-cell>
+            <mat-cell *matCellDef="let bill"> ${{bill.minPayment}}</mat-cell>
         </ng-container>
 
         <!-- Name Column -->
         <ng-container matColumnDef="dueDate">
-            <th mat-header-cell *matHeaderCellDef> Due Date </th>
-            <td mat-cell *matCellDef="let bill"> {{bill.dueDate}} </td>
-        </ng-container>
-
-        <!-- Weight Column -->
-        <ng-container matColumnDef="startingBalance">
-            <th mat-header-cell *matHeaderCellDef> Starting Balance </th>
-            <td mat-cell *matCellDef="let bill"> {{bill.startingBalance}} </td>
+            <mat-header-cell *matHeaderCellDef  mat-sort-header> Next Due Date</mat-header-cell>
+            <mat-cell *matCellDef="let bill"> {{bill.dueDate}}</mat-cell>
         </ng-container>
 
         <!-- Symbol Column -->
-        <ng-container matColumnDef="amountDue">
-            <th mat-header-cell *matHeaderCellDef> Amount Due </th>
-            <td mat-cell *matCellDef="let bill"> {{bill.amountDue}} </td>
-        </ng-container>
-
-        <!-- Symbol Column -->
-        <ng-container matColumnDef="amtPaid">
-            <th mat-header-cell *matHeaderCellDef> Amount Paid </th>
-            <td mat-cell *matCellDef="let bill"> {{bill.amtPaid}} </td>
-        </ng-container>
-
-        <!-- Symbol Column -->
-        <ng-container matColumnDef="endBalance">
-            <th mat-header-cell *matHeaderCellDef> End Balance </th>
-            <td mat-cell *matCellDef="let bill"> {{bill.endBalance}} </td>
-        </ng-container>
-
-        <!-- Symbol Column -->
-        <ng-container matColumnDef="datePaid">
-            <th mat-header-cell *matHeaderCellDef> Date Paid </th>
-            <td mat-cell *matCellDef="let bill"> {{bill.datePaid}} </td>
-        </ng-container>
-
-        <!-- Symbol Column -->
-        <ng-container matColumnDef="comments">
-            <th mat-header-cell *matHeaderCellDef> Comments </th>
-            <td mat-cell *matCellDef="let bill"> {{bill.comments}} </td>
-        </ng-container>
-
-        <!-- Symbol Column -->
-        <ng-container matColumnDef="paidBy">
-            <th mat-header-cell *matHeaderCellDef> Paid By </th>
-            <td mat-cell *matCellDef="let bill"> {{bill.paidBy}} </td>
+        <ng-container matColumnDef="lastPaid">
+            <mat-header-cell *matHeaderCellDef  mat-sort-header>Last Paid Date</mat-header-cell>
+            <mat-cell *matCellDef="let bill"> {{bill.lastPaid}}</mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="actions">
-            <th mat-header-cell *matHeaderCellDef> Actions </th>
-            <td mat-cell *matCellDef="let row" >
-                <button (click)="onEdit($event)" mat-icon-button color="primary">
+            <mat-header-cell *matHeaderCellDef> Actions</mat-header-cell>
+            <mat-cell *matCellDef="let row">
+                <button (click)="onEdit($event)" mat-button color="primary">
                     <mat-icon>edit</mat-icon>
                 </button>
-                <button (click)="onDelete($event)" mat-icon-button color="warn">
+                <button (click)="onDelete($event)" mat-button color="warn">
                     <mat-icon>delete</mat-icon>
                 </button>
-            </td>
-
+                <button (click)="openUrl(row)" mat-button color="blue">
+                    <mat-icon>open_in_new</mat-icon>
+                </button>
+            </mat-cell>
         </ng-container>
 
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
 
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
+    </mat-table>
+
+    <mat-paginator [pageSize]="10"
+                   [pageSizeOptions]="[5, 10, 25]">
+
+    </mat-paginator>
 
 </div>

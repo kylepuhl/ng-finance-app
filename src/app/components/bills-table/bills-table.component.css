@@ -6,7 +6,17 @@ table {
     text-align: center;
 }
 
-.action-buttons {
-    background: lightgray;
+.action-button {
     padding: 10px auto;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+.add-button{
+    margin: 10px auto;
+    background-color: #174e73;
+    color: white;
 }
