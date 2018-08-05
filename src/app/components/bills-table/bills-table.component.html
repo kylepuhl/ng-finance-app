@@ -1,11 +1,11 @@
 <div>
-    <h4 class="table-header">Bill Tracker</h4>
-
-    <div>
+    <mat-toolbar class="table-toolbar">
+        <h3 class="table-header">Bill Tracker</h3>
+        <span class="fill-space"></span>
         <button (click)="addBill()" mat-mini-fab class="add-button">
             <mat-icon>add</mat-icon>
         </button>
-    </div>
+    </mat-toolbar>
 
     <mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
 
@@ -36,13 +36,13 @@
         <ng-container matColumnDef="actions">
             <mat-header-cell *matHeaderCellDef> Actions</mat-header-cell>
             <mat-cell *matCellDef="let row">
-                <button (click)="onEdit($event)" mat-button color="primary">
+                <button (click)="editBill($event)" mat-button color="primary">
                     <mat-icon>edit</mat-icon>
                 </button>
-                <button (click)="onDelete($event)" mat-button color="warn">
+                <button (click)="deleteBill($event)" mat-button color="warn">
                     <mat-icon>delete</mat-icon>
                 </button>
-                <button (click)="openUrl(row)" mat-button color="blue">
+                <button (click)="openUrl(row.url)" mat-button color="blue">
                     <mat-icon>open_in_new</mat-icon>
                 </button>
             </mat-cell>
@@ -53,7 +53,7 @@
 
     </mat-table>
 
-    <mat-paginator [pageSize]="10"
+    <mat-paginator [pageSize]="5"
                    [pageSizeOptions]="[5, 10, 25]">
 
     </mat-paginator>

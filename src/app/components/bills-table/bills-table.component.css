@@ -17,6 +17,15 @@ table {
 
 .add-button{
     margin: 10px auto;
-    background-color: #174e73;
+    background: linear-gradient(to bottom right, #392672, #702c85);
     color: white;
+}
+
+.table-toolbar {
+    display: flex;
+    background: transparent;
+}
+
+.fill-space {
+    flex: 1 1 auto;
 }
