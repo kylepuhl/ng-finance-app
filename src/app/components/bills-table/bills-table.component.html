@@ -24,13 +24,13 @@
         <!-- Name Column -->
         <ng-container matColumnDef="dueDate">
             <mat-header-cell *matHeaderCellDef  mat-sort-header> Next Due Date</mat-header-cell>
-            <mat-cell *matCellDef="let bill"> {{bill.dueDate}}</mat-cell>
+            <mat-cell *matCellDef="let bill"> {{bill.dueDate.toDateString()}}</mat-cell>
         </ng-container>
 
         <!-- Symbol Column -->
         <ng-container matColumnDef="lastPaid">
             <mat-header-cell *matHeaderCellDef  mat-sort-header>Last Paid Date</mat-header-cell>
-            <mat-cell *matCellDef="let bill"> {{bill.lastPaid}}</mat-cell>
+            <mat-cell *matCellDef="let bill"> {{bill.lastPaid.toDateString()}}</mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="actions">

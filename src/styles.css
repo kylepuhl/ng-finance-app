@@ -2,7 +2,7 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 body {
-    background: linear-gradient(to bottom right, #00FF9B, #5f84fb ) fixed;
+    background: linear-gradient(to bottom right, #5f84fb, #00FF9B) fixed;
     padding: 3em;
     color:#fff;
 }

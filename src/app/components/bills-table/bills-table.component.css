@@ -17,7 +17,7 @@ table {
 
 .add-button{
     margin: 10px auto;
-    background: linear-gradient(to bottom right, #392672, #702c85);
+    background: linear-gradient(to bottom right, #702c85, #392672);
     color: white;
 }
 
