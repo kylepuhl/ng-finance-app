@@ -3,12 +3,12 @@
     font-weight: bold;
     padding: 10px;
     text-decoration: none;
-    color: black;
+    color: #ffffff;
 }
 
 .navbar {
     margin-bottom: 30px;
-    background:#2E9CE6;
+    background: transparent;
 }
 
 .menu-button {

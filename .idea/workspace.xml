@@ -3,14 +3,410 @@
   <component name="ChangeListManager">
     <list default="true" id="11d3ea71-a8be-41fb-a83d-40e0531b9360" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.bin/rc" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/package.json" afterPath="$PROJECT_DIR$/node_modules/@angular-devkit/schematics/node_modules/@angular-devkit/core/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular-devkit/schematics/package.json" afterPath="$PROJECT_DIR$/node_modules/@angular-devkit/schematics/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular-devkit/schematics/src/engine/engine.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular-devkit/schematics/src/engine/engine.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular-devkit/schematics/src/engine/engine.js" afterPath="$PROJECT_DIR$/node_modules/@angular-devkit/schematics/src/engine/engine.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular-devkit/schematics/src/engine/interface.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular-devkit/schematics/src/engine/interface.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular-devkit/schematics/src/engine/interface.js" afterPath="$PROJECT_DIR$/node_modules/@angular-devkit/schematics/src/engine/interface.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular-devkit/schematics/src/tree/host-tree.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular-devkit/schematics/src/tree/host-tree.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular-devkit/schematics/src/tree/host-tree.js" afterPath="$PROJECT_DIR$/node_modules/@angular-devkit/schematics/src/tree/host-tree.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular-devkit/schematics/src/workflow/index.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular-devkit/schematics/src/workflow/index.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular-devkit/schematics/src/workflow/index.js" afterPath="$PROJECT_DIR$/node_modules/@angular-devkit/schematics/src/workflow/index.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular-devkit/schematics/tools/workflow/node-workflow.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular-devkit/schematics/tools/workflow/node-workflow.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular-devkit/schematics/tools/workflow/node-workflow.js" afterPath="$PROJECT_DIR$/node_modules/@angular-devkit/schematics/tools/workflow/node-workflow.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations.umd.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations.umd.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/esm2015/src/players/animation_player.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/esm2015/src/players/animation_player.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/esm2015/src/version.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/esm2015/src/version.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/esm5/src/players/animation_player.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/esm5/src/players/animation_player.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/esm5/src/version.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/esm5/src/version.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/fesm2015/animations.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/fesm2015/animations.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/fesm2015/animations.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/fesm2015/animations.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/fesm2015/browser.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/fesm2015/browser.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/fesm2015/browser/testing.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/fesm2015/browser/testing.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/fesm5/animations.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/fesm5/animations.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/fesm5/animations.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/fesm5/animations.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/fesm5/browser.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/fesm5/browser.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/fesm5/browser/testing.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/fesm5/browser/testing.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/package.json" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/animations/src/players/animation_player.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/src/players/animation_player.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/cli/lib/init.js" afterPath="$PROJECT_DIR$/node_modules/@angular/cli/lib/init.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/cli/node_modules/@angular-devkit/architect/package.json" afterPath="$PROJECT_DIR$/node_modules/@angular/cli/node_modules/@angular-devkit/architect/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/cli/node_modules/@angular-devkit/core/package.json" afterPath="$PROJECT_DIR$/node_modules/@angular/cli/node_modules/@angular-devkit/core/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/cli/package.json" afterPath="$PROJECT_DIR$/node_modules/@angular/cli/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/cli/upgrade/version.js" afterPath="$PROJECT_DIR$/node_modules/@angular/cli/upgrade/version.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common-http-testing.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common-http-testing.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common-http-testing.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common-http-testing.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common-http-testing.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common-http-testing.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common-http.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common-http.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common-http.umd.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common-http.umd.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common-http.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common-http.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common-http.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common-http.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common-testing.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common-testing.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common-testing.umd.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common-testing.umd.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common-testing.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common-testing.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common-testing.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common-testing.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common.umd.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common.umd.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/common/bundles/common.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/common.metadata.json" afterPath="$PROJECT_DIR$/node_modules/@angular/common/common.metadata.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/esm2015/src/version.js" afterPath="$PROJECT_DIR$/node_modules/@angular/common/esm2015/src/version.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/esm5/src/version.js" afterPath="$PROJECT_DIR$/node_modules/@angular/common/esm5/src/version.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/fesm2015/common.js" afterPath="$PROJECT_DIR$/node_modules/@angular/common/fesm2015/common.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/fesm2015/common.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/common/fesm2015/common.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/fesm2015/http.js" afterPath="$PROJECT_DIR$/node_modules/@angular/common/fesm2015/http.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/fesm2015/http/testing.js" afterPath="$PROJECT_DIR$/node_modules/@angular/common/fesm2015/http/testing.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/fesm2015/testing.js" afterPath="$PROJECT_DIR$/node_modules/@angular/common/fesm2015/testing.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/fesm5/common.js" afterPath="$PROJECT_DIR$/node_modules/@angular/common/fesm5/common.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/fesm5/common.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/common/fesm5/common.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/fesm5/http.js" afterPath="$PROJECT_DIR$/node_modules/@angular/common/fesm5/http.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/fesm5/http/testing.js" afterPath="$PROJECT_DIR$/node_modules/@angular/common/fesm5/http/testing.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/fesm5/testing.js" afterPath="$PROJECT_DIR$/node_modules/@angular/common/fesm5/testing.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/package.json" afterPath="$PROJECT_DIR$/node_modules/@angular/common/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler-cli/package.json" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler-cli/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler-cli/src/version.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler-cli/src/version.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/bundles/compiler-testing.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/bundles/compiler-testing.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/bundles/compiler-testing.umd.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/bundles/compiler-testing.umd.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/bundles/compiler-testing.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/bundles/compiler-testing.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/bundles/compiler-testing.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/bundles/compiler-testing.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/bundles/compiler.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/bundles/compiler.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/bundles/compiler.umd.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/bundles/compiler.umd.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/bundles/compiler.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/bundles/compiler.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/bundles/compiler.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/bundles/compiler.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm2015/src/version.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm2015/src/version.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/aot/compiler.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/aot/compiler.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/aot/compiler_factory.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/aot/compiler_factory.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/aot/formatted_error.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/aot/formatted_error.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/aot/generated_file.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/aot/generated_file.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/aot/lazy_routes.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/aot/lazy_routes.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/aot/static_reflector.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/aot/static_reflector.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/aot/static_symbol.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/aot/static_symbol.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/aot/static_symbol_resolver.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/aot/static_symbol_resolver.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/aot/summary_resolver.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/aot/summary_resolver.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/aot/summary_serializer.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/aot/summary_serializer.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/aot/util.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/aot/util.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/assertions.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/assertions.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/ast_path.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/ast_path.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/chars.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/chars.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/compile_metadata.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/compile_metadata.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/compiler_util/expression_converter.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/compiler_util/expression_converter.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/config.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/config.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/constant_pool.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/constant_pool.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/core.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/core.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/css_parser/css_ast.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/css_parser/css_ast.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/css_parser/css_lexer.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/css_parser/css_lexer.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/css_parser/css_parser.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/css_parser/css_parser.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/directive_normalizer.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/directive_normalizer.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/directive_resolver.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/directive_resolver.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/expression_parser/ast.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/expression_parser/ast.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/expression_parser/lexer.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/expression_parser/lexer.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/expression_parser/parser.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/expression_parser/parser.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/i18n/digest.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/i18n/digest.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/i18n/extractor.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/i18n/extractor.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/i18n/extractor_merger.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/i18n/extractor_merger.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/i18n/i18n_ast.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/i18n/i18n_ast.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/i18n/i18n_html_parser.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/i18n/i18n_html_parser.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/i18n/i18n_parser.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/i18n/i18n_parser.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/i18n/message_bundle.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/i18n/message_bundle.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/i18n/serializers/placeholder.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/i18n/serializers/placeholder.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/i18n/serializers/serializer.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/i18n/serializers/serializer.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/i18n/serializers/xliff.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/i18n/serializers/xliff.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/i18n/serializers/xliff2.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/i18n/serializers/xliff2.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/i18n/serializers/xmb.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/i18n/serializers/xmb.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/i18n/serializers/xml_helper.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/i18n/serializers/xml_helper.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/i18n/serializers/xtb.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/i18n/serializers/xtb.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/i18n/translation_bundle.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/i18n/translation_bundle.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/identifiers.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/identifiers.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/injectable_compiler.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/injectable_compiler.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/injectable_compiler_2.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/injectable_compiler_2.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/jit/compiler.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/jit/compiler.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/lifecycle_reflector.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/lifecycle_reflector.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/metadata_resolver.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/metadata_resolver.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/ml_parser/ast.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/ml_parser/ast.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/ml_parser/html_parser.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/ml_parser/html_parser.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/ml_parser/html_tags.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/ml_parser/html_tags.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/ml_parser/html_whitespaces.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/ml_parser/html_whitespaces.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/ml_parser/icu_ast_expander.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/ml_parser/icu_ast_expander.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/ml_parser/interpolation_config.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/ml_parser/interpolation_config.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/ml_parser/lexer.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/ml_parser/lexer.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/ml_parser/parser.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/ml_parser/parser.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/ml_parser/tags.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/ml_parser/tags.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/ml_parser/xml_parser.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/ml_parser/xml_parser.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/ml_parser/xml_tags.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/ml_parser/xml_tags.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/ng_module_compiler.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/ng_module_compiler.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/ng_module_resolver.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/ng_module_resolver.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/output/abstract_emitter.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/output/abstract_emitter.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/output/abstract_js_emitter.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/output/abstract_js_emitter.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/output/js_emitter.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/output/js_emitter.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/output/map_util.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/output/map_util.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/output/output_ast.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/output/output_ast.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/output/output_interpreter.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/output/output_interpreter.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/output/output_jit.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/output/output_jit.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/output/source_map.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/output/source_map.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/output/ts_emitter.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/output/ts_emitter.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/output/value_util.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/output/value_util.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/parse_util.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/parse_util.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/pipe_resolver.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/pipe_resolver.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/provider_analyzer.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/provider_analyzer.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/render3/r3_ast.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/render3/r3_ast.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/render3/r3_factory.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/render3/r3_factory.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/render3/r3_jit.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/render3/r3_jit.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/render3/r3_module_compiler.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/render3/r3_module_compiler.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/render3/r3_pipe_compiler.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/render3/r3_pipe_compiler.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/render3/r3_template_transform.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/render3/r3_template_transform.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/render3/util.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/render3/util.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/render3/view/compiler.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/render3/view/compiler.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/render3/view/styling.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/render3/view/styling.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/render3/view/template.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/render3/view/template.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/render3/view/util.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/render3/view/util.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/resource_loader.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/resource_loader.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/schema/dom_element_schema_registry.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/schema/dom_element_schema_registry.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/schema/dom_security_schema.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/schema/dom_security_schema.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/selector.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/selector.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/shadow_css.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/shadow_css.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/style_compiler.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/style_compiler.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/style_url_resolver.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/style_url_resolver.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/summary_resolver.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/summary_resolver.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/template_parser/binding_parser.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/template_parser/binding_parser.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/template_parser/template_ast.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/template_parser/template_ast.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/template_parser/template_parser.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/template_parser/template_parser.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/template_parser/template_preparser.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/template_parser/template_preparser.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/url_resolver.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/url_resolver.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/util.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/util.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/version.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/version.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/view_compiler/provider_compiler.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/view_compiler/provider_compiler.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/view_compiler/type_check_compiler.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/view_compiler/type_check_compiler.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/view_compiler/view_compiler.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/esm5/src/view_compiler/view_compiler.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/fesm2015/compiler.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/fesm2015/compiler.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/fesm2015/compiler.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/fesm2015/compiler.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/fesm2015/testing.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/fesm2015/testing.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/fesm5/compiler.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/fesm5/compiler.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/fesm5/compiler.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/fesm5/compiler.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/fesm5/testing.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/fesm5/testing.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/package.json" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/compiler/src/version.js" afterPath="$PROJECT_DIR$/node_modules/@angular/compiler/src/version.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/bundles/core-testing.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/core/bundles/core-testing.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/bundles/core-testing.umd.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/core/bundles/core-testing.umd.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/bundles/core-testing.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/core/bundles/core-testing.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/bundles/core-testing.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/core/bundles/core-testing.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/bundles/core.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/core/bundles/core.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/bundles/core.umd.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/core/bundles/core.umd.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/bundles/core.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/core/bundles/core.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/bundles/core.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/core/bundles/core.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/core.metadata.json" afterPath="$PROJECT_DIR$/node_modules/@angular/core/core.metadata.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/esm2015/src/application_init.js" afterPath="$PROJECT_DIR$/node_modules/@angular/core/esm2015/src/application_init.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/esm2015/src/version.js" afterPath="$PROJECT_DIR$/node_modules/@angular/core/esm2015/src/version.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/esm2015/testing/index.js" afterPath="$PROJECT_DIR$/node_modules/@angular/core/esm2015/testing/index.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/esm2015/testing/public_api.js" afterPath="$PROJECT_DIR$/node_modules/@angular/core/esm2015/testing/public_api.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/esm2015/testing/src/render3.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/esm2015/testing/src/testing.js" afterPath="$PROJECT_DIR$/node_modules/@angular/core/esm2015/testing/src/testing.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/esm5/src/application_init.js" afterPath="$PROJECT_DIR$/node_modules/@angular/core/esm5/src/application_init.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/esm5/src/version.js" afterPath="$PROJECT_DIR$/node_modules/@angular/core/esm5/src/version.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/esm5/testing/src/render3.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/esm5/testing/src/testing.js" afterPath="$PROJECT_DIR$/node_modules/@angular/core/esm5/testing/src/testing.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/fesm2015/core.js" afterPath="$PROJECT_DIR$/node_modules/@angular/core/fesm2015/core.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/fesm2015/core.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/core/fesm2015/core.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/fesm2015/testing.js" afterPath="$PROJECT_DIR$/node_modules/@angular/core/fesm2015/testing.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/fesm2015/testing.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/core/fesm2015/testing.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/fesm5/core.js" afterPath="$PROJECT_DIR$/node_modules/@angular/core/fesm5/core.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/fesm5/core.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/core/fesm5/core.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/fesm5/testing.js" afterPath="$PROJECT_DIR$/node_modules/@angular/core/fesm5/testing.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/fesm5/testing.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/core/fesm5/testing.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/package.json" afterPath="$PROJECT_DIR$/node_modules/@angular/core/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/src/application_init.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/core/src/application_init.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/testing/src/render3.d.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/testing/src/testing.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/core/testing/src/testing.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/testing/src/testing_internal.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/core/testing/src/testing_internal.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/core/testing/testing.metadata.json" afterPath="$PROJECT_DIR$/node_modules/@angular/core/testing/testing.metadata.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/forms/bundles/forms.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/forms/bundles/forms.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/forms/bundles/forms.umd.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/forms/bundles/forms.umd.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/forms/bundles/forms.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/forms/bundles/forms.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/forms/bundles/forms.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/forms/bundles/forms.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/forms/esm2015/src/model.js" afterPath="$PROJECT_DIR$/node_modules/@angular/forms/esm2015/src/model.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/forms/esm2015/src/version.js" afterPath="$PROJECT_DIR$/node_modules/@angular/forms/esm2015/src/version.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/forms/esm5/src/model.js" afterPath="$PROJECT_DIR$/node_modules/@angular/forms/esm5/src/model.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/forms/esm5/src/version.js" afterPath="$PROJECT_DIR$/node_modules/@angular/forms/esm5/src/version.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/forms/fesm2015/forms.js" afterPath="$PROJECT_DIR$/node_modules/@angular/forms/fesm2015/forms.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/forms/fesm2015/forms.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/forms/fesm2015/forms.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/forms/fesm5/forms.js" afterPath="$PROJECT_DIR$/node_modules/@angular/forms/fesm5/forms.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/forms/fesm5/forms.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/forms/fesm5/forms.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/forms/forms.metadata.json" afterPath="$PROJECT_DIR$/node_modules/@angular/forms/forms.metadata.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/forms/package.json" afterPath="$PROJECT_DIR$/node_modules/@angular/forms/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/forms/src/model.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/forms/src/model.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/http/bundles/http-testing.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/http/bundles/http-testing.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/http/bundles/http-testing.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/http/bundles/http-testing.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/http/bundles/http-testing.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/http/bundles/http-testing.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/http/bundles/http.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/http/bundles/http.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/http/bundles/http.umd.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/http/bundles/http.umd.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/http/bundles/http.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/http/bundles/http.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/http/bundles/http.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/http/bundles/http.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/http/esm2015/src/version.js" afterPath="$PROJECT_DIR$/node_modules/@angular/http/esm2015/src/version.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/http/esm5/src/version.js" afterPath="$PROJECT_DIR$/node_modules/@angular/http/esm5/src/version.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/http/fesm2015/http.js" afterPath="$PROJECT_DIR$/node_modules/@angular/http/fesm2015/http.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/http/fesm2015/http.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/http/fesm2015/http.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/http/fesm2015/testing.js" afterPath="$PROJECT_DIR$/node_modules/@angular/http/fesm2015/testing.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/http/fesm5/http.js" afterPath="$PROJECT_DIR$/node_modules/@angular/http/fesm5/http.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/http/fesm5/http.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/http/fesm5/http.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/http/fesm5/testing.js" afterPath="$PROJECT_DIR$/node_modules/@angular/http/fesm5/testing.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/http/http.metadata.json" afterPath="$PROJECT_DIR$/node_modules/@angular/http/http.metadata.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/http/package.json" afterPath="$PROJECT_DIR$/node_modules/@angular/http/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/language-service/bundles/language-service.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/language-service/bundles/language-service.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/language-service/bundles/language-service.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/language-service/bundles/language-service.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/language-service/package.json" afterPath="$PROJECT_DIR$/node_modules/@angular/language-service/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/language-service/src/version.js" afterPath="$PROJECT_DIR$/node_modules/@angular/language-service/src/version.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic-testing.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic-testing.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic-testing.umd.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic-testing.umd.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic-testing.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic-testing.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic-testing.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic-testing.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/esm2015/src/version.js" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/esm2015/src/version.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/esm5/src/version.js" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/esm5/src/version.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/fesm2015/platform-browser-dynamic.js" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/fesm2015/platform-browser-dynamic.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/fesm2015/platform-browser-dynamic.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/fesm2015/platform-browser-dynamic.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/fesm2015/testing.js" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/fesm2015/testing.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/fesm5/testing.js" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/fesm5/testing.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/package.json" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/platform-browser-dynamic.metadata.json" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser-dynamic/platform-browser-dynamic.metadata.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/bundles/platform-browser-animations.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/bundles/platform-browser-animations.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/bundles/platform-browser-animations.umd.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/bundles/platform-browser-animations.umd.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/bundles/platform-browser-animations.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/bundles/platform-browser-animations.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/bundles/platform-browser-animations.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/bundles/platform-browser-animations.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/bundles/platform-browser-testing.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/bundles/platform-browser-testing.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/bundles/platform-browser-testing.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/bundles/platform-browser-testing.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/bundles/platform-browser-testing.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/bundles/platform-browser-testing.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/bundles/platform-browser.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/bundles/platform-browser.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/bundles/platform-browser.umd.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/bundles/platform-browser.umd.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/bundles/platform-browser.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/bundles/platform-browser.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/bundles/platform-browser.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/bundles/platform-browser.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/esm2015/src/version.js" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/esm2015/src/version.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/esm5/src/version.js" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/esm5/src/version.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/fesm2015/animations.js" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/fesm2015/animations.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/fesm2015/platform-browser.js" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/fesm2015/platform-browser.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/fesm2015/platform-browser.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/fesm2015/platform-browser.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/fesm2015/testing.js" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/fesm2015/testing.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/fesm5/animations.js" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/fesm5/animations.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/fesm5/platform-browser.js" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/fesm5/platform-browser.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/fesm5/platform-browser.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/fesm5/platform-browser.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/fesm5/testing.js" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/fesm5/testing.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/package.json" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/platform-browser/platform-browser.metadata.json" afterPath="$PROJECT_DIR$/node_modules/@angular/platform-browser/platform-browser.metadata.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/bundles/router-testing.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/router/bundles/router-testing.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/bundles/router-testing.umd.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/router/bundles/router-testing.umd.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/bundles/router-testing.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/router/bundles/router-testing.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/bundles/router-testing.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/router/bundles/router-testing.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/bundles/router-upgrade.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/router/bundles/router-upgrade.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/bundles/router-upgrade.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/router/bundles/router-upgrade.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/bundles/router-upgrade.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/router/bundles/router-upgrade.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/bundles/router.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/router/bundles/router.umd.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/bundles/router.umd.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/router/bundles/router.umd.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/bundles/router.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/router/bundles/router.umd.min.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/bundles/router.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/router/bundles/router.umd.min.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/esm2015/src/config.js" afterPath="$PROJECT_DIR$/node_modules/@angular/router/esm2015/src/config.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/esm2015/src/router_module.js" afterPath="$PROJECT_DIR$/node_modules/@angular/router/esm2015/src/router_module.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/esm2015/src/version.js" afterPath="$PROJECT_DIR$/node_modules/@angular/router/esm2015/src/version.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/esm5/src/config.js" afterPath="$PROJECT_DIR$/node_modules/@angular/router/esm5/src/config.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/esm5/src/router_module.js" afterPath="$PROJECT_DIR$/node_modules/@angular/router/esm5/src/router_module.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/esm5/src/version.js" afterPath="$PROJECT_DIR$/node_modules/@angular/router/esm5/src/version.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/fesm2015/router.js" afterPath="$PROJECT_DIR$/node_modules/@angular/router/fesm2015/router.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/fesm2015/router.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/router/fesm2015/router.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/fesm2015/testing.js" afterPath="$PROJECT_DIR$/node_modules/@angular/router/fesm2015/testing.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/fesm2015/upgrade.js" afterPath="$PROJECT_DIR$/node_modules/@angular/router/fesm2015/upgrade.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/fesm5/router.js" afterPath="$PROJECT_DIR$/node_modules/@angular/router/fesm5/router.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/fesm5/router.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/router/fesm5/router.js.map" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/fesm5/testing.js" afterPath="$PROJECT_DIR$/node_modules/@angular/router/fesm5/testing.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/fesm5/upgrade.js" afterPath="$PROJECT_DIR$/node_modules/@angular/router/fesm5/upgrade.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/package.json" afterPath="$PROJECT_DIR$/node_modules/@angular/router/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/router.metadata.json" afterPath="$PROJECT_DIR$/node_modules/@angular/router/router.metadata.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/src/config.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/router/src/config.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/router/src/router_module.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/router/src/router_module.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@schematics/angular/node_modules/@angular-devkit/core/package.json" afterPath="$PROJECT_DIR$/node_modules/@schematics/angular/node_modules/@angular-devkit/core/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@schematics/angular/package.json" afterPath="$PROJECT_DIR$/node_modules/@schematics/angular/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@schematics/update/node_modules/@angular-devkit/core/package.json" afterPath="$PROJECT_DIR$/node_modules/@schematics/update/node_modules/@angular-devkit/core/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@schematics/update/package.json" afterPath="$PROJECT_DIR$/node_modules/@schematics/update/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@schematics/update/update/npm.js" afterPath="$PROJECT_DIR$/node_modules/@schematics/update/update/npm.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/deep-extend/CHANGELOG.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/deep-extend/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/deep-extend/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/deep-extend/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/deep-extend/lib/deep-extend.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/deep-extend/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/rc/LICENSE.APACHE2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/rc/LICENSE.BSD" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/rc/LICENSE.MIT" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/rc/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/rc/browser.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/rc/cli.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/rc/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/rc/lib/utils.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/rc/node_modules/minimist/.travis.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/rc/node_modules/minimist/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/rc/node_modules/minimist/example/parse.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/rc/node_modules/minimist/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/rc/node_modules/minimist/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/rc/node_modules/minimist/readme.markdown" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/rc/node_modules/minimist/test/all_bool.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/rc/node_modules/minimist/test/bool.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/rc/node_modules/minimist/test/dash.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/rc/node_modules/minimist/test/default_bool.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/rc/node_modules/minimist/test/dotted.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/rc/node_modules/minimist/test/kv_short.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/rc/node_modules/minimist/test/long.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/rc/node_modules/minimist/test/num.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/rc/node_modules/minimist/test/parse.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/rc/node_modules/minimist/test/parse_modified.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/rc/node_modules/minimist/test/short.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/rc/node_modules/minimist/test/stop_early.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/rc/node_modules/minimist/test/unknown.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/rc/node_modules/minimist/test/whitespace.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/rc/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/rc/test/ini.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/rc/test/nested-env-vars.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/rc/test/test.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/strip-json-comments/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/strip-json-comments/license" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/strip-json-comments/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/strip-json-comments/readme.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tsickle/package.json" afterPath="$PROJECT_DIR$/node_modules/tsickle/package.json" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tsickle/src/cli_support.d.ts" afterPath="$PROJECT_DIR$/node_modules/tsickle/src/cli_support.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tsickle/src/decorator_downlevel_transformer.d.ts" afterPath="$PROJECT_DIR$/node_modules/tsickle/src/decorator_downlevel_transformer.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tsickle/src/decorators.d.ts" afterPath="$PROJECT_DIR$/node_modules/tsickle/src/decorators.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tsickle/src/enum_transformer.d.ts" afterPath="$PROJECT_DIR$/node_modules/tsickle/src/enum_transformer.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tsickle/src/fileoverview_comment_transformer.d.ts" afterPath="$PROJECT_DIR$/node_modules/tsickle/src/fileoverview_comment_transformer.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tsickle/src/fileoverview_comment_transformer.js" afterPath="$PROJECT_DIR$/node_modules/tsickle/src/fileoverview_comment_transformer.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tsickle/src/googmodule.d.ts" afterPath="$PROJECT_DIR$/node_modules/tsickle/src/googmodule.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tsickle/src/jsdoc.d.ts" afterPath="$PROJECT_DIR$/node_modules/tsickle/src/jsdoc.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tsickle/src/main.d.ts" afterPath="$PROJECT_DIR$/node_modules/tsickle/src/main.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tsickle/src/modules_manifest.d.ts" afterPath="$PROJECT_DIR$/node_modules/tsickle/src/modules_manifest.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tsickle/src/rewriter.d.ts" afterPath="$PROJECT_DIR$/node_modules/tsickle/src/rewriter.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tsickle/src/source_map_utils.d.ts" afterPath="$PROJECT_DIR$/node_modules/tsickle/src/source_map_utils.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tsickle/src/transformer_sourcemap.d.ts" afterPath="$PROJECT_DIR$/node_modules/tsickle/src/transformer_sourcemap.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tsickle/src/transformer_util.d.ts" afterPath="$PROJECT_DIR$/node_modules/tsickle/src/transformer_util.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tsickle/src/tsickle.d.ts" afterPath="$PROJECT_DIR$/node_modules/tsickle/src/tsickle.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tsickle/src/tsickle.js" afterPath="$PROJECT_DIR$/node_modules/tsickle/src/tsickle.js" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tsickle/src/type-translator.d.ts" afterPath="$PROJECT_DIR$/node_modules/tsickle/src/type-translator.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tsickle/src/typescript.d.ts" afterPath="$PROJECT_DIR$/node_modules/tsickle/src/typescript.d.ts" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tsickle/src/util.d.ts" afterPath="$PROJECT_DIR$/node_modules/tsickle/src/util.d.ts" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
       <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" afterPath="$PROJECT_DIR$/src/app/app.module.ts" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/bills-table/bills-table.component.css" afterPath="$PROJECT_DIR$/src/app/components/bills-table/bills-table.component.css" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/bills-table/bills-table.component.html" afterPath="$PROJECT_DIR$/src/app/components/bills-table/bills-table.component.html" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/bills-table/bills-table.component.ts" afterPath="$PROJECT_DIR$/src/app/components/bills-table/bills-table.component.ts" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/navbar/navbar.component.html" afterPath="$PROJECT_DIR$/src/app/components/navbar/navbar.component.html" />
-      <change beforePath="$PROJECT_DIR$/src/app/models/bill-record-interface.ts" afterPath="$PROJECT_DIR$/src/app/models/bill-record-interface.ts" />
+      <change beforePath="$PROJECT_DIR$/src/index.html" afterPath="$PROJECT_DIR$/src/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,26 +420,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.module.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
+      <file leaf-file-name="bills-table.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/components/bills-table/bills-table.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="63" column="28" lean-forward="false" selection-start-line="63" selection-start-column="28" selection-end-line="63" selection-end-column="28" />
+            <state relative-caret-position="315">
+              <caret line="120" column="46" lean-forward="false" selection-start-line="120" selection-start-column="46" selection-end-line="120" selection-end-column="46" />
+              <folding>
+                <element signature="e#0#59#0" expanded="true" />
+                <element signature="e#817#4059#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bill-record-interface.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/models/bill-record-interface.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="17" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bills-table.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/components/bills-table/bills-table.component.ts">
+      <file leaf-file-name="navbar.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/components/navbar/navbar.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="131" column="0" lean-forward="false" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#61#0" expanded="true" />
-                <element signature="e#819#3082#0" expanded="false" />
-                <element signature="n#!!block;n#openUrl#0;n#BillsTableComponent#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="90">
+              <caret line="6" column="20" lean-forward="false" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -51,40 +456,68 @@
       <file leaf-file-name="bills-table.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/components/bills-table/bills-table.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="28" lean-forward="false" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+            <state relative-caret-position="30">
+              <caret line="2" column="45" lean-forward="false" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add-bill-record-dialog.component.ts" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/app/components/add-bill-record-dialog/add-bill-record-dialog.component.ts">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#58#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="add-bill-record-dialog.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/components/add-bill-record-dialog/add-bill-record-dialog.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+            <state relative-caret-position="75">
+              <caret line="5" column="27" lean-forward="false" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add-bill-record-dialog.component.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/components/add-bill-record-dialog/add-bill-record-dialog.component.css">
+      <file leaf-file-name="bills-table.component.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/components/bills-table/bills-table.component.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="16" lean-forward="false" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+            <state relative-caret-position="195">
+              <caret line="13" column="20" lean-forward="false" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="payment-history-view.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/components/payment-history-view/payment-history-view.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="payment-history-view.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/components/payment-history-view/payment-history-view.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="transaction-interface.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/models/transaction-interface.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/styles.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="65" lean-forward="false" selection-start-line="4" selection-start-column="58" selection-end-line="4" selection-end-column="65" />
               <folding />
             </state>
           </provider>
@@ -104,25 +537,26 @@
         <option value="$PROJECT_DIR$/src/app/components/paycheck-panel/paycheck-panel.component.ts" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/angular.json" />
-        <option value="$PROJECT_DIR$/src/index.html" />
         <option value="$PROJECT_DIR$/src/app/components/paycheck-panel/paycheck-panel.component.html" />
         <option value="$PROJECT_DIR$/src/app/components/paycheck-panel/paycheck-panel.component.css" />
-        <option value="$PROJECT_DIR$/src/app/components/bills-view/bills-view.component.html" />
         <option value="$PROJECT_DIR$/src/app/components/page-not-found/page-not-found.component.html" />
         <option value="$PROJECT_DIR$/src/app/app.component.html" />
-        <option value="$PROJECT_DIR$/src/styles.css" />
         <option value="$PROJECT_DIR$/src/app/components/payment-history-view/payment-history-view.component.html" />
-        <option value="$PROJECT_DIR$/src/app/components/navbar/navbar.component.css" />
-        <option value="$PROJECT_DIR$/src/app/components/navbar/navbar.component.html" />
-        <option value="$PROJECT_DIR$/src/app/models/bill-record-interface.ts" />
-        <option value="$PROJECT_DIR$/src/app/components/bills-table/bills-table.component.css" />
-        <option value="$PROJECT_DIR$/src/app/components/bills-table/bills-table.component.html" />
-        <option value="$PROJECT_DIR$/src/app/components/bills-table/bills-table.component.ts" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/src/app/components/add-bill-record-dialog/add-bill-record-dialog.component.css" />
         <option value="$PROJECT_DIR$/src/app/components/add-bill-record-dialog/add-bill-record-dialog.component.html" />
         <option value="$PROJECT_DIR$/src/app/components/add-bill-record-dialog/add-bill-record-dialog.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/components/navbar/navbar.component.css" />
+        <option value="$PROJECT_DIR$/src/app/components/bills-view/bills-view.component.html" />
+        <option value="$PROJECT_DIR$/src/app/components/bills-table/bills-table.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/models/bill-record-interface.ts" />
+        <option value="$PROJECT_DIR$/src/app/components/bills-table/bills-table.component.html" />
+        <option value="$PROJECT_DIR$/src/app/components/navbar/navbar.component.html" />
+        <option value="$PROJECT_DIR$/src/styles.css" />
+        <option value="$PROJECT_DIR$/src/app/components/bills-table/bills-table.component.css" />
+        <option value="$PROJECT_DIR$/src/app/models/transaction-interface.ts" />
+        <option value="$PROJECT_DIR$/src/index.html" />
       </list>
     </option>
   </component>
@@ -202,7 +636,23 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="bills-view" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ng-finance-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ng-finance-app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="navbar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ng-finance-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ng-finance-app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="paycheck-panel" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ng-finance-app" type="b2602c69:ProjectViewProjectNode" />
@@ -266,11 +716,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53218000" />
+    <option name="totallyTimeSpent" value="59579000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23541667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -280,16 +729,27 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31411764" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38588235" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31411764" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23541667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,12 +767,51 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="63" column="28" lean-forward="false" selection-start-line="63" selection-start-column="28" selection-end-line="63" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/add-bill-record-dialog/add-bill-record-dialog.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="16" lean-forward="false" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/add-bill-record-dialog/add-bill-record-dialog.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/add-bill-record-dialog/add-bill-record-dialog.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="29" column="12" lean-forward="true" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#58#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/navbar/navbar.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="22" column="22" lean-forward="false" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#77#0" expanded="false" />
-            <element signature="e#558#605#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -344,10 +843,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="22" column="22" lean-forward="false" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#77#0" expanded="false" />
-            <element signature="e#558#605#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -379,10 +875,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="24" column="1" lean-forward="false" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#77#0" expanded="false" />
-            <element signature="e#558#605#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -406,13 +899,6 @@
     <entry file="file://$PROJECT_DIR$/src/assets/money-bill-alt.svg">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/navbar/navbar.component.ts">
@@ -485,13 +971,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/angular.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
@@ -518,7 +997,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -526,99 +1004,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="35" lean-forward="false" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/paycheck-panel/paycheck-panel.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="23" lean-forward="false" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="35" lean-forward="false" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/bills-view/bills-view.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="30" lean-forward="false" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/navbar/navbar.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="16" lean-forward="false" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/navbar/navbar.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/models/bill-record-interface.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="21" lean-forward="false" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/payment-history-view/payment-history-view.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/bills-table/bills-table.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/bills-table/bills-table.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="131" column="0" lean-forward="false" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#61#0" expanded="true" />
-            <element signature="e#819#3082#0" expanded="false" />
-            <element signature="n#!!block;n#openUrl#0;n#BillsTableComponent#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/bills-table/bills-table.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="28" lean-forward="false" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -649,18 +1034,141 @@
     <entry file="file://$PROJECT_DIR$/src/app/components/add-bill-record-dialog/add-bill-record-dialog.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
-          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/add-bill-record-dialog/add-bill-record-dialog.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state relative-caret-position="165">
+          <caret line="29" column="12" lean-forward="false" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
           <folding>
-            <element signature="e#0#58#0" expanded="true" />
+            <element signature="e#0#58#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/navbar/navbar.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="28" lean-forward="true" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="35" lean-forward="false" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/paycheck-panel/paycheck-panel.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="23" lean-forward="false" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/bills-view/bills-view.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="10" lean-forward="false" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/models/bill-record-interface.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="17" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/bills-table/bills-table.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="120" column="46" lean-forward="false" selection-start-line="120" selection-start-column="46" selection-end-line="120" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+            <element signature="e#817#4059#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/navbar/navbar.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="20" lean-forward="false" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="65" lean-forward="false" selection-start-line="4" selection-start-column="58" selection-end-line="4" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/bills-table/bills-table.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="20" lean-forward="false" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/payment-history-view/payment-history-view.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/payment-history-view/payment-history-view.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/models/transaction-interface.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/bills-table/bills-table.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="45" lean-forward="false" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="27" lean-forward="false" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>

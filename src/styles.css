@@ -2,8 +2,7 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 body {
-    background:#2E9CE6;
+    background: linear-gradient(to bottom right, #5f84fb, #00FF9B) fixed;
     padding: 3em;
-    font-family: 'Raleway', 'Arial';
     color:#fff;
 }

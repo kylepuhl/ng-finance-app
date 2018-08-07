@@ -1,7 +1,8 @@
 export interface BillRecordInterface {
-    billName: String,
+    billName: string,
     minPayment: number;
-    dueDate: String;
-    lastPaid: String;
+    dueDate: Date;
+    lastPaid: Date;
+    url: string;
 }
 
